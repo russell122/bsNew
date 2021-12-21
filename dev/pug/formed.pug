@@ -1,0 +1,41 @@
+extends layout/main
+
+block variables
+	-let title = 'Сформированный заказ'
+
+block content
+	a(href="#" id="back2Top" title="Наверх")
+		+icon('arrow-top')
+	section.catalog-top
+		.container 
+			.catalog__top 
+				ul.breadcrumbs-menu
+					li
+						a(href="#") Главная 
+					li.active 
+						a(href="#") Каталог
+				h2.title-1 Заказ сформирован
+	section.formed.section-ind 
+		.container
+			.formed__wrap 
+				.formed__left
+					.formed__img
+						img.img(src="web/images/content/formed-img.png", alt="formed-img")
+				.formed__right
+					.formed__top
+						h3.title-4 Заказ №2226 от 08 апреля 2021 г.
+						p Вариант доставки: 
+							span Самовывоз
+						p Сумма заказа: 
+							span 16 471 руб.
+						p Телефон: 
+							span +7 (444) 444-44-44
+					.formed__bottom 
+						strong Если возникли вопросы, Вы можете связаться с нами: 
+						.formed__elems
+							.formed__elem
+								span пн-пт 09:00-18:00
+							.formed__elem
+								a(href="tel:8(495)229-30-84").formed-mob 8(495)229-30-84
+							.formed__elem
+								a(href="mailto:info@brandselect.ru").g-link-accent.g-link info@brandselect.ru

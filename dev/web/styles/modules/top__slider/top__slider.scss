@@ -1,0 +1,266 @@
+.top__slider{
+	margin-bottom: 70px;
+	.swiper-container {
+        width: 100%;
+        height: 100%;
+		max-height: 536px;
+		@media screen and(max-width: $tablet) {
+			max-height: 300px;
+		  }
+		  @media screen and(max-width: $mobile) {
+			max-height: 250px;
+		  }
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+	  .swiper-pagination{
+			width: 100%;
+			position: absolute;
+			z-index: 10;
+			height: 100%;
+			bottom: 0px;
+			left: 0;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+	  }
+	  .swiper-pagination-bullet{
+		background-color: $lightGray;
+		width: 10px;
+		height: 10px;
+		border: 2px solid $lightGray;
+		border-radius: 50%;
+		margin: 10px 0px;
+		position: relative;
+		bottom: 0px;
+		left: 30px;
+		cursor: pointer;
+	  }
+	  .swiper-pagination-bullet-active{
+		border: 2px solid $black;
+		background-color: transparent;
+	  }
+	&-wrap{
+		display: flex;
+		margin-bottom: 25px;
+		@media screen and(max-width: $desktop) {
+			flex-direction: column;
+		  }
+	}
+	.mySwiper{
+		flex: 0 1 65%;
+		width: 65%;
+		@media screen and(max-width: $desktop) {
+			flex: 0 1 100%;
+			width: 100%;
+		  }
+	}
+	&-right{
+		flex: 0 1 35%;
+		width: 35%;
+		@media screen and(max-width: $desktop) {
+			flex: 0 1 100%;
+			width: 100%;
+			display: flex;
+		  }
+		@media screen and(max-width: $large) {
+			display: flex;
+			flex-direction: column;
+		  }
+	}
+	&-elem{
+		height: 50%;
+		position: relative;
+		@media screen and(max-width: $large) {
+			height: 300px;
+		  }
+		@media screen and(max-width: $mobile) {
+			height: 200px;
+		  }
+		.top__slider-cont{
+			position: absolute;
+			top: 33px;
+			left: 46px;
+			h3{
+				font-size: 30px;
+				color: $white;
+				text-transform: uppercase;
+				font-weight: 700;
+				line-height: 41px;
+				@media screen and(max-width: $desktop) {
+					font-size: 24px;
+					line-height: inherit;
+				  }
+				  @media screen and(max-width: $tablet) {
+					font-size: 20px;
+				  }
+				  @media screen and(max-width: $mobile) {
+					font-size: 18px;
+				  }
+			}
+		}
+		.click{
+			position: absolute;
+			width: 36px;
+			height: 36px;
+			background-color: $white;
+			border-radius: 50%;
+			bottom: 43px;
+			left: 52px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transform: rotate(-90deg);
+			transition: all ease .2s;
+			border: 1px solid $white;
+			&:hover{
+				background-color: $accent;
+				transition: all ease .2s;
+				.svg-sprite-icon{
+					fill: $white;
+					transition: all ease .2s;
+				}
+			}
+			.svg-sprite-icon{
+				width: 15px;
+				height: 15px;
+				fill: $accent;
+				transition: all ease .2s;
+			}
+		}
+		.click2{
+			position: absolute;
+			width: 113px;
+			height: 113px;
+			background-color: rgba($allBlack, 0.5);
+			border-radius: 50%;
+			bottom: 26px;
+			left: 52px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: all ease .2s;
+			@media screen and(max-width: $desktop) {
+				width: 80px;
+				height: 80px;
+				img{
+					object-fit: cover;
+					width: 40px;
+				}
+			  }
+			  @media screen and(max-width: $mobile) {
+				bottom: 10px;
+			  }
+			&:hover{
+				background-color: $accent;
+				transition: all ease .2s;
+			}
+		}
+	}
+	&-body {
+		display: flex;
+		align-items: center;
+		@media screen and(max-width: $desktop) {
+			flex-direction: column;
+		  }
+	}
+	&-l{
+		width: 98px;
+		height: 98px;
+		background-color: $accentColor;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		@media screen and(max-width: $desktop) {
+			margin-bottom: 20px;
+		  }
+	}
+	&-r{
+		border-top: 1px solid $accentColor;
+		border-bottom: 1px solid $accentColor;
+		border-right: 1px solid $accentColor;
+		padding: 10px 20px;
+		display: flex;
+		@media screen and(max-width: $desktop) {
+			flex-direction: column;
+			border: 1px solid $accentColor;
+		  }
+		.top__slider-r-text{
+			font-size: 22px;
+			margin-right: 20px;
+			line-height: 30px;
+			width: 550px;
+			@media screen and(max-width: 1300px) {
+				width: auto;
+				margin-right: 0;
+			  }
+			  @media screen and(max-width: $desktop) {
+				margin-bottom: 20px;
+			  }
+			  @media screen and(max-width: $tablet) {
+				font-size: 18px;
+				line-height: inherit;
+			  }
+		}
+		p{
+			font-size: 18px;
+			line-height: 22px;
+			@media screen and(max-width: $tablet) {
+				font-size: 16px;
+				line-height: inherit;
+			  }
+			span{
+				font-weight: 700;
+				text-transform: uppercase;
+				color: $accent;
+				line-height: 30px;
+			}
+		}
+	}
+	&-inf{
+		display: flex;
+		justify-content: space-between;
+		@media screen and(max-width: $tablet) {
+			flex-direction: column;
+		  }
+	}
+	&-el{
+		display: flex;
+		align-items: center;
+		flex: 0 1 30%;
+		@media screen and(max-width: $large) {
+			flex: 0 1 33.333%;
+		  }
+		  @media screen and(max-width: $tablet) {
+			margin-bottom: 20px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		  }
+		img{
+			margin-right: 12px;
+		}
+	}
+}

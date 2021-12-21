@@ -1,0 +1,141 @@
+extends layout/main
+
+block variables
+	-let title = 'Оформление заказа'
+
+block content
+	a(href="#" id="back2Top" title="Наверх")
+		+icon('arrow-top')
+	section.catalog-top
+		.container 
+			.catalog__top 
+				ul.breadcrumbs-menu
+					li
+						a(href="#") Главная 
+					li.active 
+						a(href="#") Каталог
+				h2.title-1 Оформление заказа
+	section.formation.section-ind 
+		.container
+			.formation__wrap 
+				form.formation__left
+					h3.title-5 Регион доставки
+					.formation__type.myInp2 
+						p Тип плательщика:
+						.formation__type-elem
+							input(type="radio" id="check1" name="rad1")
+							label(for="check1") Физическое лицо
+						.formation__type-elem
+							input(type="radio" id="check2" name="rad1" checked)
+							label(for="check2") Юридическое лицо
+					.formation__city
+						.formation__city-wrap
+							.sort__el
+								label.label
+									select.mySelect.mySelect2.mySelectJS
+										option(disabled selected) Местоположение*
+										option(value="1") Москва
+										option(value="2") Воронеж
+										option(value="9999") Другое местоположение
+							.g-label
+								input(type="text" placeholder="Индекс*")
+						.g-label.hid
+							input(type="text" placeholder="Введите ваш город")
+						p Выберите свой город в списке. Если вы не нашли свой город, выберите "другое местоположение", а город впишите в поле "Город"
+					.formation__delivery
+						h3.title-5 Доставка
+						.formation__delivery-wrap
+							.formation__delivery-elem.myInp4
+								input(type="radio" id="check8" name="rad3")
+								label(for="check8")
+									.formation__delivery-w
+										.formation__delivery-fig
+										.formation__delivery-el
+											p Доставка курьером
+											p.rub 500 
+										.formation__delivery-img
+											img.img(src="web/images/content/del-1.png", alt="del-1")
+							.formation__delivery-elem.myInp4
+								input(type="radio" id="check9" name="rad3")
+								label(for="check9")
+									.formation__delivery-w
+										.formation__delivery-fig
+										.formation__delivery-el
+											p Самовывоз
+											p.b Бесплатно
+										.formation__delivery-img
+											img.img(src="web/images/content/del-2.png", alt="del-2")
+							.formation__delivery-elem.myInp4
+								input(type="radio" id="check10" name="rad3")
+								label(for="check10")
+									.formation__delivery-w
+										.formation__delivery-fig
+										.formation__delivery-el
+											p Доставка до ТК
+											p.rub 0 
+										.formation__delivery-img
+											img.img(src="web/images/content/del-3.png", alt="del-3")
+					.formation__money 
+						h3.title-5 Оплата 
+						p Выберите способ оплаты:
+						.formation__type.myInp2 
+							.formation__type-elem
+								input(type="radio" id="check3" name="rad2")
+								label(for="check3") Терминалы
+							.formation__type-elem
+								input(type="radio" id="check4" name="rad2")
+								label(for="check4") Наличные курьеру 
+							.formation__type-elem
+								input(type="radio" id="check5" name="rad2" checked)
+								label(for="check5") Безналичный
+							.formation__type-elem
+								input(type="radio" id="check6" name="rad2")
+								label(for="check6") Банковские карты
+							.formation__type-elem
+								input(type="radio" id="check7" name="rad2")
+								label(for="check7") Яндекс.Деньги
+					.formation__dan 
+						h3.title-5 Данные получателя
+						.formation__dan-wrap 
+							.formation__dan-elem 
+								.g-label
+									input(type="text" placeholder="Ф.И.О. * ")
+								.g-label
+									input(type="tel" placeholder="Телефон * ")
+								.g-label
+									input(type="text" placeholder="ИНН организации")
+							.formation__dan-elem 
+								.g-label
+									input(type="email" placeholder="E-Mail * ")
+								.g-label
+									input(type="text" placeholder="Адрес доставки * ")
+								.formation__dan-down 
+									input(type="file" name="file" id="input__file")
+									label(for="input__file")
+										+icon('download')
+										span Прикрепить реквизиты
+									p Выберите файл с расширением (png,jpg,doc,pdf,docx,xls,xlsx) и размером, не превышающим 4.77 МБ.
+						.questions__check.myInp
+							input(type="checkbox" id="check11" checked)
+							label(for="check11") Согласен 
+								a(href="#").g-link.g-link-tdu.g-link-accent с политикой конфиденциальности
+
+				.formation__right
+					form.basket__form
+						.basket__form-elems
+							.basket__elem 
+								p Товары 
+									span (8)
+								strong.rub 34 567 
+							.basket__elem 
+								p Скидка по акции 
+								strong.rub - 12 345 
+							.basket__elem 
+								p Доставка 
+								strong.rub 500 
+						.basket__sum 
+							strong Итого
+								span с учетом доставки
+							span.rub 34 567 
+						.basket__btn 
+							button.button.button-blank Оформить заказ

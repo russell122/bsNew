@@ -1,0 +1,35 @@
+extends layout/main
+
+block variables
+	-let title = 'Результат поиска'
+
+block content
+	a(href="#" id="back2Top" title="Наверх")
+		+icon('arrow-top')
+	section.catalog-top
+		.container 
+			.catalog__top 
+				ul.breadcrumbs-menu
+					li
+						a(href="#") Главная 
+					li.active 
+						a(href="#") Каталог
+				h2.title-1.title-1-b Результаты поиска: терминал 294 
+					sub (7)
+	section.search 
+		.container 
+			.g-card1__wrap-sea.search__wrap
+				+card(1,true, true, false, 'g-card-1.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-s')
+			
+				+card(2,true, false, true, 'g-card-2.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '', 'g-product-quantity__inp-s')
+			
+				+card(3,true, true, false, 'g-card-3.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '', 'g-product-quantity__inp-s')
+			
+				+card(4,true, false, true, 'g-card-4.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-s')
+			
+				+card(5,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-s')
+			
+				+card(6,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-s')
+			
+				+card(7,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-s')
+							

@@ -1,0 +1,73 @@
+.stats{
+	background-color: $mainColor;
+	padding-bottom: 50px;
+	&__top{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 30px;
+		.title-2{
+			@media screen and(max-width: $mobile) {
+				margin-bottom: 20px;
+			  }
+		}
+		@media screen and(max-width: $mobile) {
+			flex-direction: column;
+			align-items: flex-start;
+		  }
+	}
+	&__row{
+		display: flex;
+		justify-content: space-between;
+		@media screen and(max-width: $desktop) {
+			flex-direction: column;
+		  }
+	}
+	&__elem{
+		display: flex;
+		flex: 0 1 49%;
+		@media screen and(max-width: $desktop) {
+			flex: 0 1 100%;
+			margin-bottom: 30px;
+		  }
+		  @media screen and(max-width: $mobile) {
+			flex-direction: column;
+		  }
+		&:hover{
+			.stats__img {
+				opacity: 0.5;
+				transition: all ease .2s;
+			}	
+		}
+	}
+	&__img{
+		flex-shrink: 0;
+		margin-right: 20px;
+		transition: all ease .2s;
+		@media screen and(max-width: $mobile) {
+			margin-bottom: 10px;
+		  }
+	}
+	&__body{
+		.title-4{
+			margin-bottom: 20px;
+		}
+		p{
+			line-height: 24px;
+			margin-bottom: 25px;
+		}
+	}
+	&__bottom{
+		display: flex;
+		align-items: center;
+		.svg-sprite-icon{
+			fill: #787878;
+			width: 17px;
+			height: 17px;
+			margin-right: 10px;
+		}
+		span{
+			color: $lightGray;
+		}
+	}
+}

@@ -1,0 +1,142 @@
+.questions{
+	padding: 60px 0;
+	@media screen and(max-width: $tablet) {
+		padding: 30px 0;
+	  }
+	&__wrap{
+		display: flex;
+		@media screen and(max-width: $large) {
+			flex-wrap: wrap;
+			flex-direction: column;
+		  }
+	}
+	&__left{
+		flex: 0 1 66%;
+		margin-right: 2%;
+		max-height: 390px;
+		padding: 30px 30px 30px 0;
+		overflow: auto;
+		@media screen and(max-width: $large) {
+			flex: 0 1 100%;
+		  }
+	}
+	&__right{
+		flex: 0 1 32%;
+		@media screen and(max-width: $large) {
+			flex: 0 1 100%;
+		  }
+		h2{
+			font-weight: 700;
+			margin-bottom: 10px;
+		}
+		p{
+			font-size: 18px;
+			margin-bottom: 20px;
+			@media screen and(max-width: $tablet) {
+				font-size: 16px;
+			  }
+		}
+		label{
+			width: 100%;
+			margin-bottom: 15px;
+			input{
+				width: 100%;
+			}
+		}
+	}
+	.myInp{
+		label{
+			font-size: 12px;
+			line-height: 24px;
+		}
+		.g-link{
+			font-size: 12px;
+		}
+	}
+	&__elem{
+		display: flex;
+		cursor: pointer;
+		flex-direction: column;
+		border-bottom: 1px solid $lightGray;
+		padding-bottom: 25px;
+		margin-bottom: 25px;
+		@media screen and(max-width: $tablet) {
+			margin-bottom: 15px;
+			padding-bottom: 15px;
+		  }
+	}
+	&__btn{
+		display: flex;
+		padding-top: 15px;
+		button{
+			width: 100%;
+		}
+	}
+	&__el{
+		margin-right: 20px;
+		span{
+			width: 42px;
+			height: 42px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid $accent;
+			border-radius: 50%;
+			transition: all ease .2s;
+			&::before{
+				content: '+';
+				font-weight: 700;
+				color: $accent;
+				transition: all ease .2s;
+			}
+		}
+	}
+	&__sub{
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.2s ease-out;
+		padding-left: 62px;
+		@media screen and(max-width: $tablet) {
+			padding: 0;
+		  }
+		p{
+			line-height: 24px;
+			@media screen and(max-width: $tablet) {
+				line-height: inherit;
+			  }
+		}
+	}
+	&__top{
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+	}
+	&__body{
+		h5{
+			font-weight: 700;
+			line-height: 24px;
+			font-size: 16px;
+			@media screen and(max-width: $tablet) {
+				line-height: inherit;
+			  }
+			
+		}
+	}
+	.questions__elem.active{
+		.questions__top{
+			.questions__el {
+				span{
+					border: 1px solid $lightGray;
+					border-radius: 50%;
+					transition: all ease .2s;
+					&::before{
+						content: '-';
+						color: $black;
+						transition: all ease .2s;
+					}
+				}
+			}
+		}
+
+	}
+}

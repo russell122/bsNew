@@ -1,0 +1,22 @@
+extends layout/main
+
+block variables
+	-let title = 'Brand select'
+
+block content
+	a(href="#" id="back2Top" title="Наверх")
+		+icon('arrow-top')
+	.coocie
+		.container
+			.coocie__wrap 
+				p Сайт BRANDSELECT  использует cookie, чтобы сделать пользование сайтом проще. Узнайте больше про использование cookie.
+				a(href="#").button.button-accent.coocieTarg OK
+	include modules/top__slider/top__slider
+	include modules/popular/popular
+	include modules/products/products
+	include modules/servic/servic
+	include modules/videoReviews/videoReviews
+	include modules/clients/clients
+	include modules/aboutCompany/aboutCompany
+	include modules/stats/stats
+	include modules/questions/questions

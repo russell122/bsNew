@@ -1,0 +1,10 @@
+extends layout/main
+
+block variables
+	-let title = 'Имя секции'
+
+block content
+	a(href="#" id="back2Top" title="Наверх")
+		+icon('arrow-top')
+	include modules/nameS2/nameS2
+	include modules/seoTxt/seoTxt

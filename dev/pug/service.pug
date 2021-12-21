@@ -1,0 +1,387 @@
+extends layout/main
+
+block variables
+	-let title = 'Услуги'
+
+block content
+	a(href="#" id="back2Top" title="Наверх")
+		+icon('arrow-top')
+	section.catalog-top
+		.container 
+			.catalog__top 
+				ul.breadcrumbs-menu
+					li
+						a(href="#") Главная 
+					li.active 
+						a(href="#") Каталог
+				h2.title-1 Регистрация онлайн кассы в ФНС
+	section.g-card.section-ind.service
+		.container
+			.g-card__wrap.service__wrap
+				.g-card__left
+					.g-card__cont
+						.g-card__cont-top
+							.g-line__wrap
+								.g-line-elem.g-alertNew Новинка
+								.g-line-elem.g-alertDiscount Скидка
+								.g-line-elem.g-alertRecomm рекомендуем
+							.swiper-container.gallery-top2
+								.swiper-wrapper.gallery-top2-wr
+									.swiper-slide.open-magn(href="web/images/content/card-1.png")
+										.slider-img 
+											img.img(src="web/images/content/card-1.png", alt="")
+									.swiper-slide.open-magn(href="web/images/content/articles-1.png")
+										.slider-img 
+											img.img(src="web/images/content/articles-1.png", alt="")
+									.swiper-slide.open-magn(href="web/images/content/card-1.png")
+										.slider-img 
+											img.img(src="web/images/content/card-1.png", alt="")
+									.swiper-slide.open-magn(href="web/images/content/card-1.png")
+										.slider-img 
+											img.img(src="web/images/content/card-1.png", alt="")
+									.swiper-slide.open-magn(href="web/images/content/card-1.png")
+										.slider-img 
+											img.img(src="web/images/content/card-1.png", alt="")
+						.g-card__cont-bottom
+							.slid
+								.swiper-container.gallery-thumbs2
+									.swiper-wrapper.gallery-thumbs2-wrap
+										.swiper-slide
+											.swiper-slide-img(style='background-image:url(./web/images/content/card-1.png)')
+										.swiper-slide
+											.swiper-slide-img(style='background-image:url(./web/images/content/articles-1.png)')
+										.swiper-slide
+											.swiper-slide-img(style='background-image:url(./web/images/content/card-1.png)')
+										.swiper-slide
+											.swiper-slide-img(style='background-image:url(./web/images/content/card-1.png)')
+										.swiper-slide
+											.swiper-slide-img(style='background-image:url(./web/images/content/card-1.png)')
+								.swiper-button-prev
+									+icon('down')
+								.swiper-button-next
+									+icon('down')
+				.g-card__right
+					.g-card__right-top.g-card1__wrap-sea
+						.g-card1__price
+							.g-card1__price-new-wrap 
+								p.ac от 
+								p.g-card1__price-new.rub(data-vvl="12 345") 12 345 
+							p.g-card1__price-old.rub от 14 000 
+						.g-card1__set
+							.g-product-quantity.g-card1__g-product-quantity
+								span(title="Меньше" alt="Меньше" data-less="1").less
+								input(type="text" value="1" data-card-inp="1" data-card-inp-val="0").g-product-quantity__inp.g-product-quantity__inp-s
+								span(title="Больше" alt="Больше" data-more="1").more 
+						.service__right-time
+							.service__right-body 
+								p Срок выполнения 
+									span 1-2 рабочих дня
+							.service__right-btn 
+								a(href="#").button.button-blank Получить консультацию
+					form.g-card__right-form
+						.g-card__right-center
+							.questions__check.myInp
+								label(for="check1") 
+									span Фискальный 
+										.br накопитель
+											button.myToolTips(type='button' data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top')
+												+icon('qw')
+							.formation__delivery-wrap.formation__delivery-wrap-1
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check8" name="rad4")
+									label(for="check8")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Договор ОФД на 1 год
+												p.rub 0 
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check9" name="rad4")
+									label(for="check9")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Договор ОФД на 1 год
+												p.rub 0 
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check10" name="rad4")
+									label(for="check10")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Договор ОФД на 1 год
+												p.rub 3900 
+							.questions__check.myInp
+								label(for="check11")
+									span Оператор 
+										.br фискальных данных
+											button.myToolTips(type='button' data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top')
+												+icon('qw')
+							.formation__delivery-wrap.formation__delivery-wrap-2
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check12" name="rad5")
+									label(for="check12")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Договор ОФД на 1 год
+												p.rub 0 
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check13" name="rad5")
+									label(for="check13")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Договор ОФД на 1 год
+												p.rub 0 
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check17" name="rad5")
+									label(for="check17")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Договор ОФД на 1 год
+												p.rub 3900 
+							.questions__check.myInp
+								label(for="check14") 
+									span Регистрация ККТ в ФНС
+										.br и ОФД «Под ключ»
+											button.myToolTips(type='button' data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top')
+												+icon('qw')
+							.formation__delivery-wrap.formation__delivery-wrap-3
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check15" name="rad6")
+									label(for="check15")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Нет
+												p.rub 0 
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check16" name="rad6")
+									label(for="check16")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Да
+												p.rub 0 
+						.g-card__right-fullPrice.g-card1__set-bottom 
+							p Общая стоимость 
+							span.rub(data-vvl="12 345") 12 345 
+						.g-card__right-btn
+							button.button.button-accent Купить 
+			.service__line 
+				h3.title-6 Почему стоит <br> обратиться к нам: 
+				.service__line-wrap
+					.service__line-elem 
+						.service__line-img 
+							img.img(src="web/images/content/why-1.png", alt="why-1")
+						p Экономия времени
+					.service__line-elem 
+						.service__line-img 
+							img.img(src="web/images/content/why-2.png", alt="why-2")
+						p Профессиональный подход
+					.service__line-elem 
+						.service__line-img 
+							img.img(src="web/images/content/why-3.png", alt="why-3")
+						p Гарантия от ошибок при регистрации
+					.service__line-elem 
+						.service__line-img 
+							img.img(src="web/images/content/why-4.png", alt="why-4")
+						p Можем оказать услугу удаленно
+			.service__slWrap
+				.service__left
+					ul.top-slider__tabs.top-slider__tabs-abs
+						li.top-slider__tabs-elem.g-hover-menu
+							a(href="#").top-slider__tabs-link Описание
+						li.top-slider__tabs-elem.g-hover-menu
+							a(href="#").top-slider__tabs-link Характеристики 
+						li.top-slider__tabs-elem.g-hover-menu
+							a(href="#").top-slider__tabs-link Драйверы и инструкции 
+					.tabs__content-wrap
+						.tabs__content-item
+							.tabs__content-item-wrap
+								.marked-unit
+									.elem 
+									p Регистрация онлайн-кассы в налоговой необходима для проведения расчётов в соответствии с законом 54-Ф3. Все организации и предприниматели обязаны выполнить регистрацию ККТ в ФНС согласно установленному порядку.
+									p Регистрация кассы онлайн в налоговой является достаточно серьёзным мероприятием. На различных этапах существует вероятность возникновения ошибок, способных привести к нарушению порядка использования кассовых аппаратов или даже выходу из строя ФН.
+									p Зарегистрировать онлайн кассу можно с помощью электронной подписи через личный кабинет ФНС или обратившись непосредственно в одно из подразделений лично.
+							.service__stages
+								h3.title-6 Основные этапы регистрации кассы:
+								.service__stages-wrap 
+									.service__stages-elem 
+										.service__stages-st 
+											p 1
+											span этап
+										.service__stages-body 
+											p Подача заявления в территориальное отделение налогового органа в личном кабинете на сайте ФНС.
+									.service__stages-elem 
+										.service__stages-st 
+											p 2
+											span этап
+										.service__stages-body 
+											p Фискализация ФН и ввод ККТ в эксплуатацию.
+									.service__stages-elem 
+										.service__stages-st 
+											p 3
+											span этап
+										.service__stages-body 
+											p Завершение регистрации онлайн-кассы в личном кабинете налоговой инспекции
+									.service__stages-elem 
+										.service__stages-st 
+											p 4
+											span этап
+										.service__stages-body 
+											p Выдача карточки о регистрации ККТ.
+									.service__stages-elem 
+										.service__stages-st 
+											p 5
+											span этап
+										.service__stages-body 
+											p Оформление договора с Оператором фискальных данных и добавление в кабинет ОФД новой ККТ.
+						.tabs__content-item
+							.tabs__content-item-wrap
+								.marked-unit
+									.elem 
+									p Регистрация онлайн-кассы в налоговой необходима для проведения расчётов в соответствии с законом 54-Ф3. Все организации и предприниматели обязаны выполнить регистрацию ККТ в ФНС согласно установленному порядку.
+									p Регистрация кассы онлайн в налоговой является достаточно серьёзным мероприятием. На различных этапах существует вероятность возникновения ошибок, способных привести к нарушению порядка использования кассовых аппаратов или даже выходу из строя ФН.
+									p Зарегистрировать онлайн кассу можно с помощью электронной подписи через личный кабинет ФНС или обратившись непосредственно в одно из подразделений лично.
+							.service__stages
+								h3.title-6 Основные этапы регистрации кассы:
+								.service__stages-wrap 
+									.service__stages-elem 
+										.service__stages-st 
+											p 1
+											span этап
+										.service__stages-body 
+											p Подача заявления в территориальное отделение налогового органа в личном кабинете на сайте ФНС.
+									.service__stages-elem 
+										.service__stages-st 
+											p 2
+											span этап
+										.service__stages-body 
+											p Фискализация ФН и ввод ККТ в эксплуатацию.
+									.service__stages-elem 
+										.service__stages-st 
+											p 3
+											span этап
+										.service__stages-body 
+											p Завершение регистрации онлайн-кассы в личном кабинете налоговой инспекции
+									.service__stages-elem 
+										.service__stages-st 
+											p 4
+											span этап
+										.service__stages-body 
+											p Выдача карточки о регистрации ККТ.
+									.service__stages-elem 
+										.service__stages-st 
+											p 5
+											span этап
+										.service__stages-body 
+											p Оформление договора с Оператором фискальных данных и добавление в кабинет ОФД новой ККТ.
+						.tabs__content-item
+							.tabs__content-item-wrap
+								.marked-unit
+									.elem 
+									p Регистрация онлайн-кассы в налоговой необходима для проведения расчётов в соответствии с законом 54-Ф3. Все организации и предприниматели обязаны выполнить регистрацию ККТ в ФНС согласно установленному порядку.
+									p Регистрация кассы онлайн в налоговой является достаточно серьёзным мероприятием. На различных этапах существует вероятность возникновения ошибок, способных привести к нарушению порядка использования кассовых аппаратов или даже выходу из строя ФН.
+									p Зарегистрировать онлайн кассу можно с помощью электронной подписи через личный кабинет ФНС или обратившись непосредственно в одно из подразделений лично.
+							.service__stages
+								h3.title-6 Основные этапы регистрации кассы:
+								.service__stages-wrap 
+									.service__stages-elem 
+										.service__stages-st 
+											p 1
+											span этап
+										.service__stages-body 
+											p Подача заявления в территориальное отделение налогового органа в личном кабинете на сайте ФНС.
+									.service__stages-elem 
+										.service__stages-st 
+											p 2
+											span этап
+										.service__stages-body 
+											p Фискализация ФН и ввод ККТ в эксплуатацию.
+									.service__stages-elem 
+										.service__stages-st 
+											p 3
+											span этап
+										.service__stages-body 
+											p Завершение регистрации онлайн-кассы в личном кабинете налоговой инспекции
+									.service__stages-elem 
+										.service__stages-st 
+											p 4
+											span этап
+										.service__stages-body 
+											p Выдача карточки о регистрации ККТ.
+									.service__stages-elem 
+										.service__stages-st 
+											p 5
+											span этап
+										.service__stages-body 
+											p Оформление договора с Оператором фискальных данных и добавление в кабинет ОФД новой ККТ.
+				.service__right 
+					.service__right-block 
+						.service__right-item 
+							h2 Для регистрации необходимо
+							.service__right-elem 
+								.service__right-elem-ic 
+									+icon('arrow-top')
+									p Сама касса, которую нужно зарегистрировать 😊 Подобрать кассу Вы можете у нас в 
+										a(href="#").g-link.g-link-accent.g-link-tdu каталоге 
+								.service__right-elem-ic 
+									+icon('arrow-top')
+									p Электронная подпись на ИП или руководителя ООО, если её нет – Вы можете получить её у нас в офисе
+								.service__right-elem-ic 
+									+icon('arrow-top')
+									p Заполнить заявление на 
+										a(href="#").g-link.g-link-accent.g-link-tdu каталоге 
+	.top-slider 
+		.container
+			.top-slider__tabs.top-slider__tabs-abs
+				h2.title-5.ind Также у нас есть услуги 
+			.swiper-container.top-slider__swiper
+				.swiper-wrapper.g-card1__wrap-sea2
+					.swiper-slide
+						+card(1,true, true, false, 'g-card-1.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-2')
+					.swiper-slide
+						+card(2,true, false, true, 'g-card-2.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '', 'g-product-quantity__inp-2')
+					.swiper-slide
+						+card(3,true, true, false, 'g-card-3.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '', 'g-product-quantity__inp-2')
+					.swiper-slide
+						+card(4,true, false, true, 'g-card-4.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-2')
+					.swiper-slide
+						+card(5,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-2')
+					.swiper-slide
+						+card(6,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-2')
+					.swiper-slide
+						+card(7,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-2')
+				.catalogSlider__slider-nav
+					.swiper-button-prev
+						+icon('down')
+					.swiper-button-next
+						+icon('down')
+	.top-slider 
+		.container
+			.top-slider__tabs.top-slider__tabs-abs
+				h2.title-5.ind Вам также может понадобиться  
+			.swiper-container.top-slider__swiper
+				.swiper-wrapper.g-card1__wrap-sea3
+					.swiper-slide
+						+card(1,true, true, false, 'g-card-1.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-3')
+					.swiper-slide
+						+card(2,true, false, true, 'g-card-2.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '', 'g-product-quantity__inp-3')
+					.swiper-slide
+						+card(3,true, true, false, 'g-card-3.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '', 'g-product-quantity__inp-3')
+					.swiper-slide
+						+card(4,true, false, true, 'g-card-4.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-3')
+					.swiper-slide
+						+card(5,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-3')
+					.swiper-slide
+						+card(6,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-3')
+					.swiper-slide
+						+card(7,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14 000', 'g-product-quantity__inp-3')
+				.catalogSlider__slider-nav
+					.swiper-button-prev
+						+icon('down')
+					.swiper-button-next
+						+icon('down')

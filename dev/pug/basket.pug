@@ -1,0 +1,50 @@
+extends layout/main
+
+block variables
+	-let title = 'Корзина'
+
+block content
+	a(href="#" id="back2Top" title="Наверх")
+		+icon('arrow-top')
+	section.catalog-top
+		.container 
+			.catalog__top 
+				ul.breadcrumbs-menu
+					li
+						a(href="#") Главная 
+					li.active 
+						a(href="#") Каталог
+				h2.title-1 Корзина
+	section.basket 
+		.container 
+			.basket__wrap 
+				.basket__left
+					.g-card1__wrap-sea
+						.g-card1__wrap-sea-cont
+							+card2(1,false,false,false,'card2-1.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','14 000', true)
+							+card2(2,false,false,false,'card2-2.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','', true)
+							+card2(3,true,true,false,'card2-3.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','', true)
+						a(href="#").button.clearBasket
+							+icon('x')
+							span Очистить корзину
+				.basket__right
+					form.basket__form
+						.basket__form-elems
+							.basket__elem 
+								span (8)
+								p.basket__elem-names Товары - 
+								strong.rub 34 567 
+							.basket__elem 
+								p Скидка по акции 
+								strong.rub - 12 345 
+						.basket__sum 
+							strong Итого
+							span.rub 34 567 
+						.basket__btn 
+							button.button.button-blank Оформить заказ
+					.basket__promo 
+						h3.title-4 Промокод
+						.basket__promo-elem
+							input(type="text" placeholder="Введите промокод")
+							.click.button Применить
+							

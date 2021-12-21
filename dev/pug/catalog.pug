@@ -1,0 +1,10 @@
+extends layout/main
+
+block variables
+	-let title = 'Каталог'
+
+block content
+	a(href="#" id="back2Top" title="Наверх")
+		+icon('arrow-top')
+	include modules/catalog/catalog
+	include modules/seoTxt/seoTxt

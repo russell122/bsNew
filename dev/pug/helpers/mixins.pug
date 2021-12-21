@@ -1,0 +1,170 @@
+mixin icon(name,mod)
+	if(mod)
+		svg(class="svg-sprite-icon icon-" + name + ' ' + mod)
+			use(xlink:href="web/images/sprite/symbol/sprite.svg#" + name)
+	else
+		svg(class="svg-sprite-icon icon-" + name)
+			use(xlink:href="web/images/sprite/symbol/sprite.svg#" + name)
+
+mixin card(i,news, discount, recomm, src, altImg, article, text, price, oldPrice, cl)
+	.g-card1__column
+		.g-card1
+			.g-line__wrap
+				if(news)
+					.g-line-elem.g-alertNew Новинка
+				if(discount)
+					.g-line-elem.g-alertDiscount Скидка
+				if(recomm)
+					.g-line-elem.g-alertRecomm рекомендуем
+			.g-card1__img
+				img.img(src=`web/images/content/${src}`, alt=`${altImg}`)
+			.g-card1__m
+			.g-card1__article
+				p Артикул: 
+					span #{article}
+			.g-card1__body 
+				a(href="card.html") #{text}
+			.g-card1__price
+				if(oldPrice !== '')
+					.g-card1__price-new-wrap 
+						p.ac от 
+						p.g-card1__price-new.rub(data-vvl="12 345") #{price}  
+					p.g-card1__price-old.rub от #{oldPrice} 
+				else 
+					.g-card1__price-new-wrap
+						p от 
+						p.g-card1__price-new.rub.black(data-vvl="12 345") #{price} 
+			.g-card1__set
+				.g-product-quantity.g-card1__g-product-quantity
+					span(title="Меньше" data-less=`${i}`).less
+					//- a(href="#" )
+					input(type="text" value="1" data-card-inp=`${i}` data-card-inp-val=`${i - 1}` class=`${cl}`).g-product-quantity__inp.
+					span(title="Больше" data-more=`${i}`).more 
+					//- a(href="#" )
+				.purchase-button(data-btn-modal="creatingClient")
+					+icon('cart') 
+
+mixin card2(i,news, discount, recomm, src, altImg, elemName, article, display, sizeDisp, plotnDisp, price, oldPrice, cans)
+	.g-card2__column
+		.g-card2
+			.g-card2__img
+				img.img(src=`web/images/content/${src}`, alt=`${altImg}`)
+			.g-card2__body
+				a(href="card.html") #{elemName}
+				.g-line__wrap2
+					if(news)
+						.g-line-elem.g-alertNew Новинка
+					if(discount)
+						.g-line-elem.g-alertDiscount Скидка
+					if(recomm)
+						.g-line-elem.g-alertRecomm рекомендуем
+				h4 Артикул: #{article}
+				.g-card2__block 
+					.g-card2__inf1
+						p.g-card2__inf1-disp Дисплей: 
+							span #{display}
+					.g-card2__inf1
+						p Разрешение экрана: 
+							span #{sizeDisp}
+						p Плотность экрана: 
+							span #{plotnDisp} DPI
+			.g-card1__price
+				if(oldPrice !== '')
+					.g-card1__price-new-wrap 
+						p.ac от 
+						p.g-card1__price-new.rub(data-vvl="12 345") #{price}  
+					p.g-card1__price-old.rub от #{oldPrice} 
+				else 
+					.g-card1__price-new-wrap
+						p от 
+						p.g-card1__price-new.rub.black(data-vvl="12 345") #{price} 
+			.g-card1__set
+				.g-card1__set-top
+					.g-product-quantity.g-card1__g-product-quantity
+						span(title="Меньше" data-less=`${i}`).less
+						//- a(href="#" )
+						input(type="text" value="1" data-card-inp=`${i}` data-card-inp-val=`${i - 1}`).g-product-quantity__inp.g-product-quantity__inp-s
+						span(title="Больше" data-more=`${i}`).more 
+						//- a(href="#" )
+					.purchase-button(data-btn-modal="creatingClient") 
+						+icon('cart') 
+				.g-card1__set-bottom 
+					p Общая стоимость
+					span.rub(data-vvl="12 345") #{price} 
+				if(cans)
+					.g-card1__set-cansel 
+						+icon('cansel')
+						span Удалить
+mixin card3(i,news, discount, recomm, src, altImg, elemName, article, display, sizeDisp, plotnDisp, price, oldPrice, cans)
+	.g-card2__column
+		.g-card2.g-card3
+			.g-card2__img
+				img.img(src=`web/images/content/${src}`, alt=`${altImg}`)
+			.g-card2__body
+				a(href="card.html") #{elemName}
+				.g-line__wrap2
+					if(news)
+						.g-line-elem.g-alertNew Новинка
+					if(discount)
+						.g-line-elem.g-alertDiscount Скидка
+					if(recomm)
+						.g-line-elem.g-alertRecomm рекомендуем
+				h4 Артикул: #{article}
+				.g-card2__block 
+					.g-card2__inf1
+						p.g-card2__inf1-disp Дисплей: 
+							span #{display}
+						p Разрешение экрана: 
+							span #{sizeDisp}
+					.g-card2__inf1
+						p Плотность экрана: 
+							span #{plotnDisp} DPI
+			.g-card1__price
+				if(oldPrice !== '')
+					.g-card1__price-new-wrap 
+						p.ac от 
+						p.g-card1__price-new.rub(data-vvl="12 345") #{price}  
+					p.g-card1__price-old.rub от #{oldPrice} 
+				else 
+					.g-card1__price-new-wrap
+						p от 
+						p.g-card1__price-new.rub.black(data-vvl="12 345") #{price} 
+			.g-card1__set
+				.g-card1__set-top
+					.g-product-quantity.g-card1__g-product-quantity
+						span(title="Меньше" data-less=`${i}`).less
+						//- a(href="#" )
+						input(type="text" value="1" data-card-inp=`${i}` data-card-inp-val=`${i - 1}`).g-product-quantity__inp.g-product-quantity__inp-s
+						span(title="Больше" data-more=`${i}`).more 
+						//- a(href="#" )
+					.purchase-button(data-btn-modal="creatingClient") 
+						+icon('cart') 
+				.g-card1__set-bottom 
+					p Общая стоимость
+					span.rub(data-vvl="12 345") #{price} 
+				if(cans)
+					.g-card1__set-cansel 
+						+icon('cansel')
+						span Удалить
+
+mixin myPagitation()
+	.myPaginations
+		.myPaginations__pagin
+			a(href="#").myPaginations__elem
+				+icon('left')
+			a(href="#").myPaginations__elem.active
+				span 1
+			a(href="#").myPaginations__elem
+				span 2
+			a(href="#").myPaginations__elem
+				span 3
+			a(href="#").myPaginations__elem
+				span ..
+			a(href="#").myPaginations__elem
+				span 15
+			a(href="#").myPaginations__elem
+				+icon('right')
+	
+mixin tooltip(text)
+	span(data-tooltip=text).myToolTips
+		+icon('qw')

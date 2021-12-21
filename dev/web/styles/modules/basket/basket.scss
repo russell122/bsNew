@@ -1,0 +1,148 @@
+.basket{
+	padding: 60px 0 110px 0;
+	@media screen and(max-width: $large) {
+		padding: 40px 0 80px 0;
+	  }
+	@media screen and(max-width: $tablet) {
+		padding: 30px 0 50px 0;
+	  }
+	@media screen and(max-width: $mobile) {
+		padding: 30px 0;
+	  }
+	&__wrap{
+		display: flex;
+		@media screen and(max-width: $desktop) {
+			flex-wrap: wrap;
+			flex-direction: column;
+		  }
+	}
+	&__left{
+		flex: 0 1 76%;
+		margin-right: 2%;
+		@media screen and(max-width: $desktop) {
+			flex: 0 1 100%;
+			margin-right: 0;
+		  }
+		.g-card1__wrap-sea{
+			.button{
+				border: 1px solid #C5C5C5;
+				border-radius: 15px;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 15px;
+				&:hover{
+					.svg-sprite-icon{
+						fill: $accent;
+						transition: all ease .2s;
+					}
+				}
+				.svg-sprite-icon{
+					width: 13px;
+					height: 13px;
+					transition: all ease .2s;
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+	&__right{
+		flex: 0 1 22%;
+		@media screen and(max-width: $desktop) {
+			flex: 0 1 100%;
+			min-width: 360px;
+			margin-left: auto;
+		  }
+		  @media screen and(max-width: $mobile) {
+			min-width: 100%;
+			margin: 0 auto;
+		  }
+	}
+	&__form{
+		background: $white;
+		box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.25);
+		border-radius: 25px;
+		padding: 30px;
+		margin-bottom: 30px;
+	}
+	&__form-elems{
+		border-bottom: 1px solid $lightGray;
+		margin-bottom: 35px;
+	}
+	&__elem{
+		display: flex;
+		// justify-content: space-between;
+		margin-bottom: 15px;
+		p.basket__elem-names{
+			margin-left: 5px;
+		}
+		strong{
+			font-weight: 700;
+			font-size: 18px;
+			margin-left: auto;
+			@media screen and(max-width: $mobile) {
+				font-size: 16px;
+			  }
+		}
+	}
+	&__sum{
+		font-weight: 700;
+		font-size: 24px;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 35px;
+		line-height: 30px;
+		strong{
+			span{
+				font-weight: 400;
+				font-size: 16px;
+				display: block;
+			}
+		}
+		@media screen and(max-width: $mobile) {
+			font-size: 20px;
+		  }
+	}
+	&__btn{
+		.button{
+			width: 100%;
+		}
+	}
+	&__promo-elem{
+		position: relative;
+		input{
+			border: 1px solid $lightGray;
+			border-radius: 15px;
+			font-size: 14px;
+			color: $black;
+			padding: 19px;
+			width: 100%;
+			transition: all ease .2s;
+			@media screen and(max-width: $desktop) {
+				padding: 16px;
+			  }
+			&:focus{
+				border: 1px solid $black;
+				transition: all ease .2s;
+			}
+		}
+		.click{
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color: $black;
+			color: $white;
+			transition: all ease .2s;
+			&:hover{
+				background-color: $accent;
+				transition: all ease .2s;
+			}
+		}
+	}
+	&__promo{
+		.title-4{
+			font-weight: 300;
+			margin-bottom: 20px;
+		}
+	}
+}

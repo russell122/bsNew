@@ -1,0 +1,169 @@
+
+body.show-modal {
+	// padding-right: 17px;
+	  overflow: hidden;
+  }
+  // .vmodal {}
+  .vmodal.open .vmodal__overlay{
+	  width: 100%;
+	  height: 100%;
+	  overflow-x: hidden;
+	  overflow-y: auto;
+  }
+  .vmodal.open .vmodal__overlay,
+  .vmodal.open .vmodal__window {
+	  opacity: 1;
+	  z-index: 999;
+  }
+  .vmodal.hide .vmodal__overlay,
+  .vmodal.hide .vmodal__window {
+	  opacity: 1;
+	  z-index: 999;
+  }
+  .vmodal.open .vmodal__window {
+	  transform: translateY(1.75rem);
+  }
+  .vmodal.open .vmodal__overlay{
+	  background-color: rgba(0, 0, 0, .9);
+  }
+  
+  .vmodal.hide .vmodal__window {
+	  transform: translateY(-200px);
+  }
+  
+  .vmodal.hide .vmodal__overlay {
+	  background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .vmodal__window ,.vmodal__overlay {
+	  opacity: 0;
+	  z-index: -1;
+  }
+  
+  .vmodal__overlay {
+	  position: fixed;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  background-color: rgba(0, 0, 0, 0);
+	  transition: background .2s ease-in;
+  }
+  
+  .vmodal__window {
+	  padding-bottom: 15px;
+	  width: 95%;
+	  margin: 0 auto 1.75rem;
+	  background: #fff;
+	  border-radius: 5px;
+	  transform: translateY(-200px);
+	  transition: transform .2s ease-in;
+	  
+	  .g-btn {
+		width: 100%;
+		padding: 10px 45px;
+	  }
+	  input[type='text'],
+	  input[type='email'],
+	  input[type='tel'],
+	  input[type='date'],
+	  select,
+	  textarea {
+		// margin-bottom: 15px;
+		// padding: 8px;
+		width: 100%;
+		// border: none;
+		box-shadow: none;
+		border-radius: 4px;
+	  }
+	  // label { display: inline-block; ;margin-bottom: 15px; }
+	  label {
+		// display: inline-flex;
+		// align-items: flex-start;
+		margin-right: 10px;
+		// margin-bottom: 15px;
+		cursor: pointer;
+		&:hover {
+		  color: $accentColor;
+		}
+		.filter__checkbox {
+		  position: relative;
+		  display: inline-block;
+		  margin-top: 4px;
+		  margin-right: 8px;
+		  margin-left: 8px;
+		  flex-shrink: 0;
+		  background-color: #fff;
+		  border-radius: 4px;
+		  @include box(14px);
+		  &:after {
+			position: absolute;
+			content: '';
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			@include box(50%);
+			background-color: transparent;
+			border-radius: 2px;
+		  }
+		}
+		input[type='checkbox'],
+		input[type='radio'] {
+		  display: none;
+		  &:checked ~ .filter__checkbox {
+			&:after {
+			  background-color: $accentColor;
+			}
+		  }
+		}
+	  }
+  }
+  
+  .vmodal__header {
+	  display: flex;
+	  padding: 10px 15px;
+	  justify-content: space-between;
+	  border-bottom: 1px solid #eee;
+  }
+  .vmodal__title {
+	  font-size: 1.5rem;
+	  font-family: $mainFont;
+	  // font-weight: 500;
+	  color: $accentColor;
+  }
+  
+  .vmodal__close {
+	   font-size: 28px;
+	  cursor: pointer;
+  }
+  
+  .vmodal__body {
+	  padding: 10px 15px;
+  }
+  
+  .vmodal__body p {
+	  margin: 0 0 5px;
+  }
+  
+  .vmodal__footer {
+	  display: -webkit-flex;
+	  display: -moz-flex;
+	  display: -ms-flex;
+	  display: -o-flex;
+	  display: flex;
+	  padding: 10px 15px;
+	  border-top: 1px solid #eee;
+	  align-items: center;
+  }
+  
+  .vmodal__link {
+	display: inline-block;
+	margin-left: auto;
+	background: transparent;
+	/*text-align: right;*/
+	font-size: 14px;
+	border: none;
+	color: $mainColor;
+	box-shadow: none;
+  }
+  

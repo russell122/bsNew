@@ -1,0 +1,428 @@
+extends layout/main
+
+block variables
+	-let title = 'Карточка'
+
+block content
+	a(href="#" id="back2Top" title="Наверх")
+		+icon('arrow-top')
+	section.catalog-top
+		.container 
+			.catalog__top 
+				ul.breadcrumbs-menu
+					li
+						a(href="#") Главная 
+					li.active 
+						a(href="#") Каталог
+				h2.title-1 Смарт-терминал ЭВОТОР 10 Стандарт ПЛЮС
+	section.g-card.section-ind 
+		.container
+			.g-card__wrap 
+				.g-card__left
+					.g-card__cont
+						.g-card__cont-top
+							.g-line__wrap.g-line__wrap-card
+								.g-line-elem.g-alertNew Новинка
+								.g-line-elem.g-alertDiscount Скидка
+								.g-line-elem.g-alertRecomm рекомендуем
+							.swiper-container.gallery-top2
+								.swiper-wrapper.gallery-top2-wr
+									.swiper-slide.open-magn(href="web/images/content/test.jpg")
+										.slider-img 
+											img.img(src="web/images/content/test.jpg", alt="")
+									.swiper-slide.open-magn(href="web/images/content/articles-1.png")
+										.slider-img 
+											img.img(src="web/images/content/articles-1.png", alt="")
+									.swiper-slide.open-magn(href="web/images/content/card-1.png")
+										.slider-img 
+											img.img(src="web/images/content/card-1.png", alt="")
+									.swiper-slide.open-magn(href="web/images/content/card-1.png")
+										.slider-img 
+											img.img(src="web/images/content/card-1.png", alt="")
+									.swiper-slide.open-magn(href="web/images/content/card-1.png")
+										.slider-img 
+											img.img(src="web/images/content/card-1.png", alt="")
+						.g-card__cont-bottom
+							.g-card__line 
+								a(href="#").g-card__line-video(data-btn-modal="videoModal") 
+									.g-card__line-ic 
+										+icon('t-down')
+									span Видео обзор
+							.slid
+								.swiper-container.gallery-thumbs2
+									.swiper-wrapper.gallery-thumbs2-wrap
+										.swiper-slide
+											.swiper-slide-img(style='background-image:url(./web/images/content/test.jpg)')
+										.swiper-slide
+											.swiper-slide-img(style='background-image:url(./web/images/content/articles-1.png)')
+										.swiper-slide
+											.swiper-slide-img(style='background-image:url(./web/images/content/card-1.png)')
+										.swiper-slide
+											.swiper-slide-img(style='background-image:url(./web/images/content/card-1.png)')
+										.swiper-slide
+											.swiper-slide-img(style='background-image:url(./web/images/content/card-1.png)')
+								.swiper-button-prev
+									+icon('down')
+								.swiper-button-next
+									+icon('down')
+				.g-card__right.g-card1__wrap-sea
+					.g-card__right-top
+						.g-card1__price
+							.g-card1__price-new-wrap 
+								p.ac от 
+								p.g-card1__price-new.rub(data-vvl="12 345") 12 345 
+							p.g-card1__price-old.rub от 14 000 
+						.g-card1__set
+							.g-product-quantity.g-card1__g-product-quantity
+								span(title="Меньше" alt="Меньше" data-less="1").less
+								input(type="text" value="1" data-card-inp="1" data-card-inp-val="0").g-product-quantity__inp.g-product-quantity__inp-s
+								span(title="Больше" alt="Больше" data-more="1").more
+						.g-card__right-garant 
+							.g-card__right-ic 
+								+icon('garant')
+							.g-card__right-body
+								p Гарантия лучшей цены 
+								span Если нашли цену ниже, 
+									a(href="#")(data-btn-modal="getConsultation") напишите нам 
+									span , мы сделаем цену еще лучше
+					form.g-card__right-form
+						.g-card__right-center
+							.questions__check.myInp
+								input(type="checkbox" id="check1")
+								label(for="check1") 
+									span Фискальный 
+										.br накопитель
+											button.myToolTips(type='button' data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top')
+												+icon('qw')
+							.formation__delivery-wrap.formation__delivery-wrap-1
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check8" name="rad4")
+									label(for="check8")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Договор ОФД на 1 год
+												p.rub 0 
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check9" name="rad4")
+									label(for="check9")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Договор ОФД на 1 год
+												p.rub 0 
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check10" name="rad4")
+									label(for="check10")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Договор ОФД на 1 год
+												p.rub 3900 
+							.questions__check.myInp
+								input(type="checkbox" id="check11" checked)
+								label(for="check11") 
+									span Оператор 
+										.br фискальных данных
+											button.myToolTips(type='button' data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top')
+												+icon('qw')
+							.formation__delivery-wrap.formation__delivery-wrap-2
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check12" name="rad5")
+									label(for="check12")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Договор ОФД на 1 год
+												p.rub 0 
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check13" name="rad5")
+									label(for="check13")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Договор ОФД на 1 год
+												p.rub 0 
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check17" name="rad5")
+									label(for="check17")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Договор ОФД на 1 год
+												p.rub 3900 
+							.questions__check.myInp
+								input(type="checkbox" id="check14" checked)
+								label(for="check14") 
+									span Регистрация ККТ в ФНС
+										.br и ОФД «Под ключ»
+											button.myToolTips(type='button' data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top')
+												+icon('qw')
+							.formation__delivery-wrap.formation__delivery-wrap-3
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check15" name="rad6")
+									label(for="check15")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Нет
+												p.rub 0 
+								.formation__delivery-elem.myInp3
+									input(type="radio" id="check16" name="rad6")
+									label(for="check16")
+										.formation__delivery-w
+											.formation__delivery-fig
+											.formation__delivery-el
+												p Да
+												p.rub 0 
+						.g-card__right-fullPrice.g-card1__set-bottom 
+							p Общая стоимость 
+							span.rub(data-vvl="12 345") 12 345 
+						.g-card__right-btn
+							button.button.button-accent Купить 
+						.g-card__right-info
+							.g-card__right-info-left
+								.g-card__right-info-ic 
+									+icon('car')
+								.g-card__right-info-body 
+									p Бесплатная доставка 
+										span до транспортной компании. 
+									p Доставка до двери 
+										span в пределах МКАД - от 500 р. 
+									p Срок доставки 
+										span  - от 1 дня 
+							.g-card__right-info-right 
+								a(href="#").button.button-blank(data-btn-modal="getConsultation") Получить консультацию
+			ul.top-slider__tabs
+				li.top-slider__tabs-elem.g-hover-menu
+					a(href="#").top-slider__tabs-link Описание
+				li.top-slider__tabs-elem.g-hover-menu
+					a(href="#").top-slider__tabs-link Характеристики 
+				li.top-slider__tabs-elem.g-hover-menu
+					a(href="#").top-slider__tabs-link Драйверы и инструкции 
+			.tabs__content-wrap
+				.tabs__content-item
+					.tabs__content-item-wrap
+						.tabs__content-item-elem
+							.tabs__content-item-fig
+								p Дисплей
+								span 5,5 дюйма Цветной, сенсорный
+							.tabs__content-item-fig
+								p Разрешение экрана
+								span 1280 х 720
+							.tabs__content-item-fig
+								p Плотность экрана
+								span 267 DPI
+							.tabs__content-item-fig
+								p Процессор компьютера
+								span MediaTek MTK8321A, 1.3GHZ
+							.tabs__content-item-fig
+								p Операционная система
+								span  Evotor OS, версия 3
+						.tabs__content-item-elem
+							.tabs__content-item-fig
+								p Дисплей
+								span 5,5 дюйма Цветной, сенсорный
+							.tabs__content-item-fig
+								p Разрешение экрана
+								span 1280 х 720
+							.tabs__content-item-fig
+								p Плотность экрана
+								span 267 DPI
+							.tabs__content-item-fig
+								p Процессор компьютера
+								span MediaTek MTK8321A, 1.3GHZ
+							.tabs__content-item-fig
+								p Операционная система
+								span  Evotor OS, версия 3
+						.tabs__content-item-elem
+							.tabs__content-item-fig
+								p Дисплей
+								span 5,5 дюйма Цветной, сенсорный
+							.tabs__content-item-fig
+								p Разрешение экрана
+								span 1280 х 720
+							.tabs__content-item-fig
+								p Плотность экрана
+								span 267 DPI
+							.tabs__content-item-fig
+								p Процессор компьютера
+								span MediaTek MTK8321A, 1.3GHZ
+							.tabs__content-item-fig
+								p Операционная система
+								span  Evotor OS, версия 3
+				.tabs__content-item
+					.tabs__content-item-wrap
+						.tabs__content-item-elem
+							.tabs__content-item-fig
+								p Дисплей
+								span 5,5 дюйма Цветной, сенсорный
+							.tabs__content-item-fig
+								p Разрешение экрана
+								span 1280 х 720
+							.tabs__content-item-fig
+								p Плотность экрана
+								span 267 DPI
+							.tabs__content-item-fig
+								p Процессор компьютера
+								span MediaTek MTK8321A, 1.3GHZ
+							.tabs__content-item-fig
+								p Операционная система
+								span  Evotor OS, версия 3
+						.tabs__content-item-elem
+							.tabs__content-item-fig
+								p Дисплей
+								span 5,5 дюйма Цветной, сенсорный
+							.tabs__content-item-fig
+								p Разрешение экрана
+								span 1280 х 720
+							.tabs__content-item-fig
+								p Плотность экрана
+								span 267 DPI
+							.tabs__content-item-fig
+								p Процессор компьютера
+								span MediaTek MTK8321A, 1.3GHZ
+							.tabs__content-item-fig
+								p Операционная система
+								span  Evotor OS, версия 3
+						.tabs__content-item-elem
+							.tabs__content-item-fig
+								p Дисплей
+								span 5,5 дюйма Цветной, сенсорный
+							.tabs__content-item-fig
+								p Разрешение экрана
+								span 1280 х 720
+							.tabs__content-item-fig
+								p Плотность экрана
+								span 267 DPI
+							.tabs__content-item-fig
+								p Процессор компьютера
+								span MediaTek MTK8321A, 1.3GHZ
+							.tabs__content-item-fig
+								p Операционная система
+								span  Evotor OS, версия 3
+				.tabs__content-item
+					.tabs__content-item-wrap
+						.tabs__content-item-elem
+							.tabs__content-item-fig
+								p Дисплей
+								span 5,5 дюйма Цветной, сенсорный
+							.tabs__content-item-fig
+								p Разрешение экрана
+								span 1280 х 720
+							.tabs__content-item-fig
+								p Плотность экрана
+								span 267 DPI
+							.tabs__content-item-fig
+								p Процессор компьютера
+								span MediaTek MTK8321A, 1.3GHZ
+							.tabs__content-item-fig
+								p Операционная система
+								span  Evotor OS, версия 3
+						.tabs__content-item-elem
+							.tabs__content-item-fig
+								p Дисплей
+								span 5,5 дюйма Цветной, сенсорный
+							.tabs__content-item-fig
+								p Разрешение экрана
+								span 1280 х 720
+							.tabs__content-item-fig
+								p Плотность экрана
+								span 267 DPI
+							.tabs__content-item-fig
+								p Процессор компьютера
+								span MediaTek MTK8321A, 1.3GHZ
+							.tabs__content-item-fig
+								p Операционная система
+								span  Evotor OS, версия 3
+						.tabs__content-item-elem
+							.tabs__content-item-fig
+								p Дисплей
+								span 5,5 дюйма Цветной, сенсорный
+							.tabs__content-item-fig
+								p Разрешение экрана
+								span 1280 х 720
+							.tabs__content-item-fig
+								p Плотность экрана
+								span 267 DPI
+							.tabs__content-item-fig
+								p Процессор компьютера
+								span MediaTek MTK8321A, 1.3GHZ
+							.tabs__content-item-fig
+								p Операционная система
+								span  Evotor OS, версия 3
+	.top-slider 
+		.container
+			.top-slider__tabs.top-slider__tabs-abs
+				h2.title-5.ind Вам также может понадобиться 
+			.swiper-container.top-slider__swiper
+				.swiper-wrapper.g-card1__wrap-sea2
+					.swiper-slide
+						+card(1,true, true, false, 'g-card-1.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-2')
+					.swiper-slide
+						+card(2,true, false, true, 'g-card-2.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '', 'g-product-quantity__inp-2')
+					.swiper-slide
+						+card(3,true, true, false, 'g-card-3.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '', 'g-product-quantity__inp-2')
+					.swiper-slide
+						+card(4,true, false, true, 'g-card-4.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-2')
+					.swiper-slide
+						+card(5,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-2')
+					.swiper-slide
+						+card(6,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-2')
+					.swiper-slide
+						+card(7,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-2')
+				.catalogSlider__slider-nav
+					.swiper-button-prev
+						+icon('down')
+					.swiper-button-next
+						+icon('down')
+	.top-slider 
+		.container
+			.top-slider__tabs.top-slider__tabs-abs
+				h2.title-5.ind Похожие товары 
+			.swiper-container.top-slider__swiper
+				.swiper-wrapper.g-card1__wrap-sea3
+					.swiper-slide
+						+card(1,true, true, false, 'g-card-1.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-3')
+					.swiper-slide
+						+card(2,true, false, true, 'g-card-2.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '', 'g-product-quantity__inp-3')
+					.swiper-slide
+						+card(3,true, true, false, 'g-card-3.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '', 'g-product-quantity__inp-3')
+					.swiper-slide
+						+card(4,true, false, true, 'g-card-4.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-3')
+					.swiper-slide
+						+card(5,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-3')
+					.swiper-slide
+						+card(6,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-3')
+					.swiper-slide
+						+card(7,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-3')
+				.catalogSlider__slider-nav
+					.swiper-button-prev
+						+icon('down')
+					.swiper-button-next
+						+icon('down')
+	.top-slider 
+		.container
+			.top-slider__tabs.top-slider__tabs-abs
+				h2.title-5.ind Ранее просмотреннные товары 
+			.swiper-container.top-slider__swiper
+				.swiper-wrapper.g-card1__wrap-sea4
+					.swiper-slide
+						+card(1,true, true, false, 'g-card-1.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-4')
+					.swiper-slide
+						+card(2,true, false, true, 'g-card-2.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '', 'g-product-quantity__inp-4')
+					.swiper-slide
+						+card(3,true, true, false, 'g-card-3.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '', 'g-product-quantity__inp-4')
+					.swiper-slide
+						+card(4,true, false, true, 'g-card-4.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-4')
+					.swiper-slide
+						+card(5,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-4')
+					.swiper-slide
+						+card(6,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-4')
+					.swiper-slide
+						+card(7,true, false, false, 'g-card-5.png', 'img', 'CK 1378/N', 'Смарт-терминал Эвотор 5i с эквайрингом', '12 345', '14000', 'g-product-quantity__inp-4')
+				.catalogSlider__slider-nav
+					.swiper-button-prev
+						+icon('down')
+					.swiper-button-next
+						+icon('down')

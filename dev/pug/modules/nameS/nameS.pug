@@ -1,0 +1,131 @@
+section.catalog-top
+	.container 
+		.catalog__top 
+			ul.breadcrumbs-menu
+				li
+					a(href="#") Главная 
+				li.active 
+					a(href="#") Каталог
+			h2.title-1 Название раздела  (345)
+section.nameS
+	.container 
+		.nameS__bg 
+			img.img-cover(src="web/images/content/banner.jpg", alt="banner")
+		ul.nameS__subs
+			li.nameS__el
+				a(href="#") Подраздел <br> 1
+			li.nameS__el
+				a(href="#") Название <br>подраздел 2 
+			li.nameS__el
+				a(href="#") Название <br>подраздел 3
+			li.nameS__el
+				a(href="#") Подраздел <br> 1
+			li.nameS__el
+				a(href="#") Название <br> подраздел 2
+			li.nameS__el
+				a(href="#") Название <br> подраздел 3
+			li.n.nameS__el
+				a(href="#") Подраздел <br> 1
+			.nameS__el.nameS__targ
+				span Раскрыть<br>все
+				+icon('d')
+		.nameS__block
+			ul 
+				li 
+					a(href="#") Название
+				li 
+					a(href="#") Название
+				li 
+					a(href="#") Название
+				li 
+					a(href="#") Название
+				li 
+					a(href="#") Название
+			ul 
+				li 
+					a(href="#") Название
+				li 
+					a(href="#") Название
+				li 
+					a(href="#") Название
+				li 
+					a(href="#") Название
+				li 
+					a(href="#") Название
+			ul 
+				li 
+					a(href="#") Название
+				li 
+					a(href="#") Название
+				li 
+					a(href="#") Название
+				li 
+					a(href="#") Название
+				li 
+					a(href="#") Название
+		.nameS__wrap 
+			.nameS__left
+				ul
+					span Онлайн-кассы
+					li
+						a(href="#").g-link Аренда онлайн-кассы
+					li
+						a(href="#").g-link Касса для маркировки
+					li
+						a(href="#").g-link Смарт-терминалы
+					li
+						a(href="#").g-link Автономная онлайн-касса
+					li
+						a(href="#").g-link Мобильная онлайн-касса
+					li
+						a(href="#").g-link Фискальный регистратор
+					li
+						a(href="#").g-link Онлайн-касса для интернет-магазина
+					li
+						a(href="#").g-link Фискальный накопитель
+					li
+						a(href="#").g-link Кассы для транспорта
+				ul
+					span Оборудование для маркировки
+					li
+						a(href="#").g-link Комплекты для маркировки
+					li
+						a(href="#").g-link Касса для маркировки
+					li
+						a(href="#").g-link ﻿Сканер для маркировки
+					li
+						a(href="#").g-link ﻿Принтер для маркировки
+					li
+						a(href="#").g-link Терминал сбора данных для маркировки
+					li
+						a(href="#").g-link ﻿Программы для маркировки
+				ul
+					span Принтер этикеток
+					li
+						a(href="#").g-link Термотрансферные принтеры этикеток
+					li
+						a(href="#").g-link Термопринтеры этикеток
+					li
+						a(href="#").g-link Термотрансферные принтеры этикеток
+					li
+						a(href="#").g-link Термопринтеры этикеток
+					li
+						a(href="#").g-link Мобильный принтер этикеток
+					li
+						a(href="#").g-link Промышленный принтер этикеток
+				a(href="#").g-link-NamS Распродажа
+				a(href="#").g-link-NamS  Маркировка товаров "под ключ"
+			.nameS__right
+				.sort__el
+					label.label
+						select.mySelect.mySelectJS
+							option(value="1") Сначала дешевые
+							option(value="2") Сначала дорогие
+				.g-card1__wrap-sea
+					+card2(1,false,false,false,'card2-1.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','14 000',false)
+					+card2(2,false,false,false,'card2-2.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','',false)
+					+card2(3,true,true,false,'card2-3.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','',false)
+					+card2(4,true,true,true,'card2-4.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','14 000',false)
+					+card2(5,false,false,false,'card2-2.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','',false)
+					+card2(6,false,false,false,'card2-3.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','',false)
+				+myPagitation()

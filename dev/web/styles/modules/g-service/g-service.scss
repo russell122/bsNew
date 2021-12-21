@@ -1,0 +1,230 @@
+.service{
+	&__wrap{
+		margin-bottom: 30px;
+	}
+	&__right-time{
+		display: flex;
+		align-items: center;
+		@media screen and(max-width: $mobile) {
+			flex-direction: column;
+			align-items: flex-start;
+		  }
+	}
+	&__right-body{
+		font-size: 18px;
+		margin-right: 20px;
+		@media screen and(max-width: $large) {
+			font-size: 16px;
+		  }
+		@media screen and(max-width: $tablet) {
+			font-size: 14px;
+		  }
+		p{
+			display: flex;
+			flex-direction: column;
+			@media screen and(max-width: $mobile) {
+				margin-bottom: 10px;
+			  }
+		}
+		span{
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+	}
+	.slid{
+		width: 100%;
+	}
+	&__line{
+		display: flex;
+		align-items: center;
+		margin-bottom: 80px;
+		@media screen and(max-width: $desktop) {
+			flex-direction: column;
+			align-items: flex-start;
+			margin-bottom: 60px;
+		  }
+		@media screen and(max-width: $large) {
+			margin-bottom: 40px;
+		  }
+		@media screen and(max-width: $tablet) {
+			margin-bottom: 20px;
+		  }
+		.title-6{
+			text-transform: uppercase;
+			white-space: nowrap;
+			margin-right: 60px;
+			@media screen and(max-width: $desktop) {
+				margin-right: 0;
+				margin-bottom: 20px;
+			  }
+		}
+	}
+	&__line-wrap{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		@media screen and(max-width: $large) {
+			flex-wrap: wrap;
+		  }
+	}
+	&__line-elem{
+		display: flex;
+		align-items: center;
+		@media screen and(max-width: $large) {
+			flex: 0 1 50%;
+			margin-bottom: 20px;
+		  }
+		@media screen and(max-width: $mobile) {
+			flex: 0 1 100%;
+			margin-bottom: 20px;
+		  }
+	}
+	&__line-img{
+		flex-shrink: 0;
+		margin-right: 10px;
+	}
+	&__slWrap{
+		display: flex;
+		@media screen and(max-width: $desktop) {
+			flex-wrap: wrap;
+			flex-direction: column;
+		  }
+	}
+	&__left{
+		flex: 0 1 68%;
+		margin-right: 2%;
+		@media screen and(max-width: $desktop) {
+			margin-right: 0;
+			flex: 0 1 100%;
+			margin-bottom: 30px;
+		  }
+	}
+	.tabs__content-item-wrap{
+		margin-bottom: 45px;
+	}
+	.g-card__right-top{
+		flex-wrap: wrap;
+	}
+	.g-card1__set, .g-card1__price, .service__right-time{
+		margin-bottom: 20px;
+	}
+	&__stages{
+		.title-6{
+			margin-bottom: 20px;
+		}
+	}
+	&__stages-elem{
+		display: flex;
+		align-items: center;
+		margin-bottom: 15px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__stages-st{
+		width: 53px;
+		height: 53px;
+		background-color: $accent;
+		border-radius: 15px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		margin-right: 15px;
+		flex-shrink: 0;
+		p{
+			font-weight: 700;
+			font-size: 18px;
+			color: $white;
+		}
+		span{
+			font-size: 14px;
+			font-weight: 500;
+			color: $white;
+		}
+	}
+	&__stages-body{
+		p{
+			font-weight: 500;
+		}
+	}
+	&__right{
+		flex: 0 1 30%;
+		@media screen and(max-width: $desktop) {
+			flex: 0 1 100%;
+		  }
+	}
+	&__right-block{
+		background-image: url('../images/content/reg-img.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		max-height: 510px;
+		height: 100%;
+		padding: 17px;
+		@media screen and(max-width: $tablet) {
+			max-height: 100%;
+		  }
+		@media screen and(max-width: $mobile) {
+			padding: 10px;
+		  }
+	}
+	&__right-item{
+		border: 1px solid $lightGray;
+		padding: 40px 30px;
+		height: 100%;
+		@media screen and(max-width: $tablet) {
+			padding: 20px;
+		  }
+		@media screen and(max-width: $mobile) {
+			padding: 10px;
+		  }
+		h2{
+			font-weight: 300;
+			font-size: 24px;
+			color: $white;
+			width: 200px;
+			text-align: center;
+			margin: 0 auto 50px auto;
+			line-height: 32px;
+			@media screen and(max-width: $tablet) {
+				font-size: 22px;
+				margin: 0 auto 40px auto;
+			  }
+			@media screen and(max-width: $mobile) {
+				font-size: 20px;
+				margin: 0 auto 30px auto;
+			  }
+		}
+	}
+	.top-slider__tabs{
+		padding: 0;
+	}
+	&__right-elem-ic{
+		display: flex;
+		margin-bottom: 30px;
+		@media screen and(max-width: $mobile) {
+			margin-bottom: 20px;
+		  }
+		&:last-child{
+			margin-bottom: 0;
+		}
+		.svg-sprite-icon{
+			width: 16px;
+			height: 16px;
+			fill: $accent;
+			transform: rotate(90deg);
+			flex-shrink: 0;
+			margin-right: 10px;
+		}
+		p{
+			color: $white;
+			font-size: 18px;
+			font-weight: 500;
+			@media screen and(max-width: $mobile) {
+				font-size: 16px;
+			  }
+		}
+	}
+}

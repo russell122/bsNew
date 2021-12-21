@@ -1,0 +1,102 @@
+extends layout/main
+
+block variables
+	-let title = 'Статьи'
+
+block content
+	a(href="#" id="back2Top" title="Наверх")
+		+icon('arrow-top')
+	section.catalog-top
+		.container 
+			.catalog__top 
+				ul.breadcrumbs-menu
+					li
+						a(href="#") Главная 
+					li.active 
+						a(href="#") Каталог
+				h2.title-1 Статьи
+	section.articles 
+		.container 
+			.articles__wrap 
+				.articles__column 
+					a(href="#").articles__item 
+						.articles__img 
+							img.img(src="web/images/content/articles-1.png", alt="articles-1")
+						.articles__line.stats__bottom 
+							+icon('calendar')
+							span 10 июня 2021
+						h3 Каждый из нас понимает очевидную вещь: курс на социально
+						p Безусловно, новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в ...
+				.articles__column
+					a(href="#").articles__item 
+						.articles__img 
+							img.img(src="web/images/content/articles-2.png", alt="articles-1")
+						.articles__line.stats__bottom 
+							+icon('calendar')
+							span 10 июня 2021
+						h3 Каждый из нас понимает очевидную вещь: курс на социально
+						p Безусловно, новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в ...
+				.articles__column
+					a(href="#").articles__item 
+						.articles__img 
+							img.img(src="web/images/content/articles-3.png", alt="articles-1")
+						.articles__line.stats__bottom 
+							+icon('calendar')
+							span 10 июня 2021
+						h3 Каждый из нас понимает очевидную вещь: курс на социально
+						p Безусловно, новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в ...
+				.articles__column
+					a(href="#").articles__item 
+						.articles__img 
+							img.img(src="web/images/content/articles-4.png", alt="articles-1")
+						.articles__line.stats__bottom 
+							+icon('calendar')
+							span 10 июня 2021
+						h3 Каждый из нас понимает очевидную вещь: курс на социально
+						p Безусловно, новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в ...
+				.articles__column
+					a(href="#").articles__item 
+						.articles__img 
+							img.img(src="web/images/content/articles-5.png", alt="articles-1")
+						.articles__line.stats__bottom 
+							+icon('calendar')
+							span 10 июня 2021
+						h3 Каждый из нас понимает очевидную вещь: курс на социально
+						p Безусловно, новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в ...
+				.articles__column
+					a(href="#").articles__item 
+						.articles__img 
+							img.img(src="web/images/content/articles-6.png", alt="articles-1")
+						.articles__line.stats__bottom 
+							+icon('calendar')
+							span 10 июня 2021
+						h3 Каждый из нас понимает очевидную вещь: курс на социально
+						p Безусловно, новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в ...
+				.articles__column
+					a(href="#").articles__item 
+						.articles__img 
+							img.img(src="web/images/content/articles-7.png", alt="articles-1")
+						.articles__line.stats__bottom 
+							+icon('calendar')
+							span 10 июня 2021
+						h3 Каждый из нас понимает очевидную вещь: курс на социально
+						p Безусловно, новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в ...
+				.articles__column
+					a(href="#").articles__item 
+						.articles__img 
+							img.img(src="web/images/content/articles-8.png", alt="articles-1")
+						.articles__line.stats__bottom 
+							+icon('calendar')
+							span 10 июня 2021
+						h3 Каждый из нас понимает очевидную вещь: курс на социально
+						p Безусловно, новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в ...
+				.articles__column
+					a(href="#").articles__item 
+						.articles__img 
+							img.img(src="web/images/content/articles-9.png", alt="articles-1")
+						.articles__line.stats__bottom 
+							+icon('calendar')
+							span 10 июня 2021
+						h3 Каждый из нас понимает очевидную вещь: курс на социально
+						p Безусловно, новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в ...
+			+myPagitation()

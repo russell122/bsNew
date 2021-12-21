@@ -1,0 +1,56 @@
+
+.servic{
+	background-color: $mainColor;
+	padding-bottom: 50px;
+	@media screen and(max-width: $mobile) {
+		padding-bottom: 30px;
+	  }
+	&__top{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 30px;
+		.title-3{
+			@media screen and(max-width: $mobile) {
+				margin-bottom: 20px;
+			  }
+		}
+		@media screen and(max-width: $mobile) {
+			flex-direction: column;
+			align-items: flex-start;
+		  }
+	}
+	&__wrap{
+		display: flex;
+		@media screen and(max-width: $desktop) {
+			flex-wrap: wrap;
+		  }
+	}
+	&__column{
+		flex: 0 1 25%;
+		padding: 0 20px;
+		@media screen and(max-width: $desktop) {
+			flex: 0 1 33.333%;
+			margin-bottom: 30px;
+		  }
+		@media screen and(max-width: $large) {
+			flex: 0 1 50%;
+		  }
+		@media screen and(max-width: $mobile) {
+			flex: 0 1 100%;
+			padding: 0;
+		  }
+	}
+	&__elem{
+		display: flex;
+		flex-direction: column;
+		background-color: $white;
+		height: 100%;
+		border-bottom: 3px solid $accent;
+		border-right: 1px solid $accentColor;
+		border-left: 1px solid $accentColor;
+	}
+	&__body{
+		padding: 15px 24px;
+	}
+}
