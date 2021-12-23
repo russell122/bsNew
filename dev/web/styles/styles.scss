@@ -1626,5 +1626,94 @@ select {
   }
 }
 
+.videoWrapper{
+	position: relative;
+	width: 100%;
+	height: 0;
+	background-color: #000;
+	border-radius: 5px;
+	overflow: hidden;
+	padding-top: 56%;
+}
+
+.videoIframe{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+}
+
+.videoPoster{
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	border: 0;
+	outline: none;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+	background-size: cover;
+	text-indent: -999em;
+	overflow: hidden;
+	opacity: 1;
+	transition: opacity 800ms, height 0s;
+	transition-delay: 0s, 0s;
+	font-size: 10px;
+	&::before{
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 9em;
+		height: 9em;
+		margin: -4em 0 0 -4em;
+		border: .5em solid #fff;
+		border-radius: 100%;
+		transition: border-color 300ms;
+	}
+	&::after{
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 0;
+		height: 0;
+		margin: -1em 0 0 -.2em;
+		border-left: 2em solid #fff;
+		border-top: 1.5em solid transparent;
+		border-bottom: 1.5em solid transparent;
+		transition: border-color 300ms;
+	}
+	&:hover::before, &:focus::before{
+		border-color: $accent;
+	}
+	&:hover::after, &:focus::after{
+		border-left-color: $accent;
+	}
+}
+
+.js-videoWrapper-active .videoPoster{
+	opacity: 0;
+	height: 0;
+	transition-delay: 0s, 800ms;
+}
+
+a[class*='lightcase-icon-']{
+	@media screen and(max-width: $tablet) {
+		bottom: 5%;
+	  }
+	@media screen and(max-width: $mobile) {
+		bottom: 15%;
+	  }
+}
 
 @import "modules/modules";

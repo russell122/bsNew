@@ -12,7 +12,7 @@ const vendorsScripts = [
   // 'node_modules/fullcalendar/main.js',
   // 'node_modules/fullcalendar/locales/ru.js',
   // 'node_modules/fslightbox/index.js',
-  // 'node_modules/lightcase/src/js/lightcase.js',
+  'node_modules/lightcase/src/js/lightcase.js',
   // 'node_modules/mixitup/dist/mixitup.min.js'
 ];
 

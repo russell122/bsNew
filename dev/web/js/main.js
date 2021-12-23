@@ -820,9 +820,9 @@ $(document).ready(function () {
 			el: ".swiper-pagination",
 			clickable: true,
 		},
-		autoplay: {
-			delay: 4000,
-		},
+		// autoplay: {
+		// 	delay: 4000,
+		// },
 	});
 
 
@@ -997,6 +997,9 @@ $(document).ready(function () {
 		}
 	});
 
+	$('a[data-rel^=lightcase]').lightcase({
+	});
+
 
 });
 
@@ -1065,4 +1068,32 @@ document.addEventListener('DOMContentLoaded', function () {
 		click.preventDefault();
 		scrollTo(0, 400);
 	}
+
+
+
+
 });
+// video
+$(document).ready(function () {
+	$('.js-videoWrapper').each(function (i, el) {
+		var id = $(this).data('id');
+		var poster = "url('https://i1.ytimg.com/vi/" + id + "/sddefault.jpg')";
+		$(this).append('<iframe class="videoIframe js-videoIframe" frameborder="0" src="" allowtransparency="true" allowfullscreen="" data-src="https://www.youtube.com/embed/' + id + '?autoplay=1"></iframe>');
+		$(this).find('.js-videoPoster').css('background-image', poster);
+	});
+
+});
+
+$(document).on('click', '.js-videoPoster', function (ev) {
+	ev.preventDefault();
+	var $poster = $(this);
+	var $wrapper = $poster.closest('.js-videoWrapper');
+	videoPlay($wrapper);
+});
+
+function videoPlay($wrapper) {
+	var $iframe = $wrapper.find('.js-videoIframe');
+	var src = $iframe.data('src');
+	$wrapper.addClass('js-videoWrapper-active');
+	$iframe.attr('src', src);
+}

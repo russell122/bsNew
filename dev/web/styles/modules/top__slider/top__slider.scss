@@ -1,9 +1,12 @@
 .top__slider{
 	margin-bottom: 70px;
+	.top__slider-wrap{
+		// max-height: 547px;
+	}
 	.swiper-container {
         width: 100%;
         height: 100%;
-		max-height: 536px;
+		max-height: 547px;
 		@media screen and(max-width: $tablet) {
 			max-height: 300px;
 		  }
@@ -18,19 +21,24 @@
         background: #fff;
 
         /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
         display: flex;
         justify-content: center;
         align-items: center;
       }
+	  .swiper-slide picture{
+		height: 100%;
+		width: 100%;
+	  }
 
       .swiper-slide img {
         display: block;
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
+		@media screen and(max-width: $mobile) {
+			object-fit: contain;
+			// object-fit: initial;
+		  }
       }
 	  .swiper-pagination{
 			width: 100%;
@@ -43,6 +51,10 @@
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
+			@media screen and(max-width: $mobile) {
+				flex-direction: row;
+				align-items: flex-end;
+			  }
 	  }
 	  .swiper-pagination-bullet{
 		background-color: $lightGray;
@@ -55,6 +67,11 @@
 		bottom: 0px;
 		left: 30px;
 		cursor: pointer;
+		@media screen and(max-width: $mobile) {
+			left: 0;
+			margin: 0 10px;
+			bottom: 15px;
+		  }
 	  }
 	  .swiper-pagination-bullet-active{
 		border: 2px solid $black;
@@ -78,10 +95,12 @@
 	&-right{
 		flex: 0 1 35%;
 		width: 35%;
+		max-height: 547px;
 		@media screen and(max-width: $desktop) {
 			flex: 0 1 100%;
 			width: 100%;
 			display: flex;
+			max-height: 100%;
 		  }
 		@media screen and(max-width: $large) {
 			display: flex;
