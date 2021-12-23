@@ -16,7 +16,7 @@ header.header.scroll-bar
 					p C  9-18 c понедельника по пятницу
 				.header__info-autoriz
 					a(href="#").g-link.g-link-white 
-						+icon('user')
+						+icon('user-2')
 						span Войти / Регистрация
 	.header__block
 		.container
@@ -367,7 +367,10 @@ header.header.scroll-bar
 								+icon('search')
 						.header__search-block
 							.header__search-categ 
-								h4 Кателогии
+								.header__search-categ-top
+									h4 Кателогии
+									.header__search-categ-close 
+										+icon('close')
 								ul
 									li 
 										a(href="#") Принтеры этикеток

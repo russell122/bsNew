@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		clearBasket('.clearBasket', '.g-card1__wrap-sea-cont', '.g-card2__column', '.basket__elem > span', '.basket__elem > p');
 		clearBasket('.clearBasketSM', '.header__basket-prod-wrap', '.products__elem-basket', '.header__basket-body-val', '.header__basket-body-cont');
+		clearBasket('.clearBasketSM', '.header__basket-prod-wrap', '.products__elem-basket', '.header__basket-icon > span', '.header__basket-body-cont');
 	}
 	clearBasketWrap();
 
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		}
 		removeElemBasket('.products__body-close', '.products__elem-basket', '.products__elem-basket', '.header__basket-body-val', '.header__basket-body-cont');
+		removeElemBasket('.products__body-close', '.products__elem-basket', '.products__elem-basket', '.header__basket-icon > span', '.header__basket-body-cont');
 		removeElemBasket('.g-card1__set-cansel', '.g-card2__column', '.g-card2__column', '.basket__elem > span', '.basket__elem > p');
 	}
 	removeElemBasketWrap();
@@ -128,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	countItemsBasket('.products__elem-basket', '.header__basket-body-val', '.header__basket-body-cont');
+	countItemsBasket('.products__elem-basket', '.header__basket-icon > span', '.header__basket-body-cont');
 	countItemsBasket('.g-card2__column', '.basket__elem > span', '.basket__elem > p');
 
 
@@ -243,6 +246,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 
 			if (!e.target.closest('.header__search')) {
+				headerSearchInpEl.classList.remove('active');
+				headerSearchInp.classList.remove('active');
+				headerCenter.classList.remove('active');
+				headerSearch.classList.remove('active');
+
+				closeSearchBlock()
+			}
+
+			if (e.target.closest('.header__search-categ-close')) {
 				headerSearchInpEl.classList.remove('active');
 				headerSearchInp.classList.remove('active');
 				headerCenter.classList.remove('active');
@@ -654,6 +666,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					wrap.classList.remove('active');
 					targ.classList.remove('active');
 				}
+
 			})
 
 			document.addEventListener('keydown', (e) => {
@@ -810,20 +823,38 @@ if (nameSBubs) {
 
 $(document).ready(function () {
 
+	let slider;
+	const activeSlider = (type) => {
+		slider = new Swiper(".mySwiper", {
+			direction: type,
+			// direction: "vertical",
+			slidesPerView: 1,
+			spaceBetween: 30,
+			mousewheel: true,
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+			},
+			// autoplay: {
+			// 	delay: 4000,
+			// },
+		});
+	}
 
-	var swiper = new Swiper(".mySwiper", {
-		direction: "vertical",
-		slidesPerView: 1,
-		spaceBetween: 30,
-		mousewheel: true,
-		pagination: {
-			el: ".swiper-pagination",
-			clickable: true,
-		},
-		// autoplay: {
-		// 	delay: 4000,
-		// },
-	});
+	var breakpoint = window.matchMedia('(max-width:577px)');
+
+	const checkerBreakpoint = () => {
+		if (breakpoint.matches === true) {
+			return activeSlider('horizontal');
+		} else if (breakpoint.matches === false) {
+			return activeSlider('vertical');
+		}
+	};
+
+	breakpoint.addListener(checkerBreakpoint);
+	checkerBreakpoint();
+
+
 
 
 	var swiper2 = new Swiper('.top-slider__swiper', {

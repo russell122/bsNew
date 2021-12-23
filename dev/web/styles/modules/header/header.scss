@@ -526,7 +526,6 @@
 			font-size: 18px;
 			font-weight: 700;
 			text-transform: uppercase;
-			margin-bottom: 24px;
 		}
 	}
 	.header__search-block.active{
@@ -549,6 +548,17 @@
 		}
 		a{
 			font-weight: 500;
+		}
+	}
+	&__search-categ-top{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 24px;
+		.svg-sprite-icon{
+			width: 16px;
+			height: 16px;
+			cursor: pointer;
 		}
 	}
 	.products{
@@ -688,16 +698,16 @@
 			  }
 		}
 		span{
-			width: 22px;
+			width: 16px;
 			height: 16px;
 			font-size: 12px;
 			font-weight: 700;
 			color: $white;
 			background-color: $accent;
 			border-radius: 22px;
-			padding: 5px 3px;
+			padding: 10px;
 			position: absolute;
-			top: 0;
+			top: -6px;
 			right: -10px;
 			display: none;
 			justify-content: center;

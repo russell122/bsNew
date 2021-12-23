@@ -11,7 +11,7 @@
 			max-height: 300px;
 		  }
 		  @media screen and(max-width: $mobile) {
-			max-height: 250px;
+			// max-height: 250px;
 		  }
       }
 
@@ -36,7 +36,7 @@
         height: 100%;
         object-fit: cover;
 		@media screen and(max-width: $mobile) {
-			object-fit: contain;
+			// object-fit: contain;
 			// object-fit: initial;
 		  }
       }
@@ -114,7 +114,7 @@
 			height: 300px;
 		  }
 		@media screen and(max-width: $mobile) {
-			height: 200px;
+			height: 150px;
 		  }
 		.top__slider-cont{
 			position: absolute;
