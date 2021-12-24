@@ -2,13 +2,17 @@ section.top__slider
 	.top__slider-wrap 
 		.swiper-container.mySwiper
 			.swiper-wrapper
+				//- .swiper-slide
+				//- 	img(src="web/images/content/test.jpg", alt="slide__img")
+				//- .swiper-slide
+				//- 	img(src="web/images/content/test.jpg", alt="slide__img")
 				.swiper-slide
 						picture
-							source.img-cover(srcset="web/images/content/test.jpg" media="(min-width: 577px)")
+							source(srcset="web/images/content/test.jpg" media="(min-width: 577px)")
 							img(src="web/images/content/test-sm.jpg", alt="slide__img")
 				.swiper-slide
 						picture
-							source.img-cover(srcset="web/images/content/slider-1.jpg" media="(min-width: 577px)")
+							source(srcset="web/images/content/slider-1.jpg" media="(min-width: 577px)")
 							img(src="web/images/content/slider-1-sm.jpg", alt="slide__img")
 				.swiper-slide
 						picture
