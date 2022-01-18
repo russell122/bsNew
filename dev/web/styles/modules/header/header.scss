@@ -1,11 +1,24 @@
 .header{
 	position: fixed;
 	z-index: 100;
-	height: 150px;
+	height: 153px;
 	width: 100%;
+	@media screen and(max-width: $desktop) {
+		height: 126px;
+	  }
+	@media screen and(max-width: 1024px) {
+		height: 91px;
+	  }
+	@media screen and(max-width: $large) {
+		height: 119px;
+	  }
+	@media screen and(max-width: $mobile) {
+		height: 116px;
+	  }
 	&__info{
 		background-color: $black;
 		padding: 10px 0;
+		// transition: all ease .2s;
 		@media screen and (max-width: 1024px) {
 			display: none;
 		}
@@ -93,8 +106,10 @@
 		padding: 17px 0;
 		background-color: $white;
 		box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.25);
-		position: relative;
+		// position: relative;
+		position: static;
 		width: 100%;
+		transition: all ease .2s;
 	}
 	&__block-wrap{
 		display: flex;
@@ -622,6 +637,9 @@
 				font-weight: 400;
 				margin-right: 18px;
 			}
+			.products__body-priceSm-value{
+				margin-right: 0!important;
+			}
 			.products__body-price{
 				font-size: 18px;
 				font-weight: 700;
@@ -737,7 +755,7 @@
 		padding: 24px 46px;
 		overflow: auto;
 		@media screen and(max-width: $mobile) {
-			padding: 15px 46px 15px 15px;
+			padding: 15px 15px 15px 15px;
 			min-width: 300px;
 			width: 100%;
 		  }
@@ -773,10 +791,22 @@ body.lock{
 	}
 }
 .header__block.active{
-	padding: 5px 0;
+	// padding: 5px 0;
+	transition: all ease .2s;
+	// animation-name: fadeInDown;
+	// animation-duration: .25s;
+	padding: 10px 0;
+	animation: smoothScroll .8s forwards;
+	@media screen and(max-width: 1024px) {
+		padding: 15px 0;
+	  }
 }
 .header__info.active{
-	display: none;
+	// display: none;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	// transition: all ease .2s;
 }
 .header__bottom-wrap {
 	@media screen and (max-width: 767px) {
@@ -962,6 +992,11 @@ body.lock{
 }
 
 .products__elem-basket{
+	@media screen and(max-width: $mobile) {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start!important;
+	}
 	.products__body-price-w{
 		@media screen and(max-width: $mobile) {
 			display: flex;

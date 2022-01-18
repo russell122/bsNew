@@ -97,7 +97,19 @@ button { outline: none; }
 
 .content { 
 	flex: 1 0 auto;
-	padding-top: 150px;
+	padding-top: 153px;
+	@media screen and(max-width: $desktop) {
+		padding-top: 126px;
+	  }
+	@media screen and(max-width: 1024px) {
+		padding-top: 91px;
+	  }
+	@media screen and(max-width: $large) {
+		padding-top: 119px;
+	  }
+	@media screen and(max-width: $mobile) {
+		padding-top: 116px;
+	  }
 }
 
 .container {
@@ -471,6 +483,9 @@ button { outline: none; }
 	}
 	&__g-product-quantity{
 		width: 65%;
+		.g-product-quantity__val{
+			display: none;
+		}
 	}
 }
 .g-card2{

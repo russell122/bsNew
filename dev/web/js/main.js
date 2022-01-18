@@ -14,6 +14,90 @@ document.addEventListener('DOMContentLoaded', () => {
 		})(this)
 	};
 
+	// Рассчет скидки в корзине
+
+	function discountBasket(priceDiscountWrap, priceWrap, wrapLink) {
+		let priceDiscount = document.querySelectorAll(priceDiscountWrap);
+		let price = document.querySelectorAll(priceWrap);
+		let wrap = document.querySelector(wrapLink);
+		let numberItems = document.querySelectorAll('.disc');
+		let rez = [];
+
+		let actPrice;
+		let oldPrice;
+		let sum = 0;
+
+		// console.log(priceDiscount);
+		// console.log(price);
+
+		// console.log(numberItems);
+
+		price.forEach((el) => {
+			if (!el.classList.contains('black')) {
+				rez.push(el);
+			}
+		})
+
+		rez.forEach((el, i) => {
+			actPrice = el.innerHTML.replace(/\s/g, '');
+			if (priceDiscount[i].getAttribute('data-vvl')) {
+				oldPrice = priceDiscount[i].getAttribute('data-vvl').replace(/\s/g, '');
+			}
+			if (numberItems.length >= 1) {
+				sum += (oldPrice - actPrice) * numberItems[i].value;
+			}
+
+			// console.log(numberItems[i].value);
+		})
+
+		if (wrap) {
+			wrap.innerHTML = '-' + ' ' + sum + ' ';
+		}
+		return sum;
+
+	}
+	discountBasket('.g-card1__price-old', '.g-card1__price-new', '.basket__elem-discount > strong');
+
+	// Сумма корзины
+
+	function sumBasket(valueProductWrap, priceWrap, wrapLink, fullWrapLink) {
+		let valueProduct = document.querySelectorAll(valueProductWrap);
+		let price = document.querySelectorAll(priceWrap);
+		let wrapper = document.querySelector(wrapLink);
+		let fullWrap = document.querySelector(fullWrapLink);
+		let arrSumElems = [];
+
+		// console.log(valueProduct);
+		// console.log(price);
+		// console.log(wrapper);
+
+		valueProduct.forEach((product, i) => {
+			let newPrice = price[i].innerHTML.replace(/\s/g, '');
+			arrSumElems.push(summation(+product.innerHTML.trim(), newPrice));
+		})
+
+		function summation(value, price) {
+			let sum = value * price;
+			return sum;
+		}
+
+		let res = arrSumElems.reduce((sum, el) => {
+			sum += el;
+			return sum;
+		}, 0)
+
+		if (wrapper) {
+			wrapper.innerHTML = prettify(res) + ' ';
+		}
+
+		if (fullWrap) {
+			fullWrap.innerHTML = prettify(res - discountBasket('.g-card1__price-old', '.g-card1__price-new', '.basket__elem-discount > strong')) + ' ';
+		}
+
+	}
+	sumBasket('.products__body-priceSm-value', '.products__body-price-js', '.header__basket-body > .rub', false);
+	sumBasket('.g-product-quantity__val', '.g-card1__price-new', '.basket__form-elems > .basket__elem > .rub', '.basket__sum > .rub');
+
 
 	// Очистка корзины
 
@@ -27,6 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
 					e.preventDefault();
 					wrapBlock.innerHTML = '';
 					countItemsBasket(clearElem, clearBlocks, myCont);
+					sumBasket('.products__body-priceSm-value', '.products__body-price-js', '.header__basket-body > .rub', false);
+					sumBasket('.g-product-quantity__val', '.g-card1__price-new', '.basket__form-elems > .basket__elem > .rub', '.basket__sum > .rub');
+					discountBasket('.g-card1__price-old', '.g-card1__price-new', '.basket__elem-discount > strong');
 				})
 			}
 
@@ -50,6 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
 						if (e.target.closest(target) && e.target.closest(wrap)) {
 							wrapBlocks[i].remove();
 							countItemsBasket(clearElem, clearBlocks, myCont);
+							sumBasket('.products__body-priceSm-value', '.products__body-price-js', '.header__basket-body > .rub', false);
+							sumBasket('.g-product-quantity__val', '.g-card1__price-new', '.basket__form-elems > .basket__elem > .rub', '.basket__sum > .rub');
+							discountBasket('.g-card1__price-old', '.g-card1__price-new', '.basket__elem-discount > strong');
 						}
 					})
 				})
@@ -112,21 +202,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 
 			if (String(elems.length).split('')[String(elems.length).length - 1] == 1) {
-				// console.log('Товар')
 				cont.innerHTML = 'товар ';
 			}
 			else if (String(elems.length).split('')[String(elems.length).length - 1] == 2 || String(elems.length).split('')[String(elems.length).length - 1] == 3 || String(elems.length).split('')[String(elems.length).length - 1] == 4) {
-				// console.log('Товара')
 				cont.innerHTML = 'товара ';
 			} else {
-				// console.log('Товаров')
 				cont.innerHTML = 'товаров ';
 			}
 
 		}
-
-
-
 	}
 
 	countItemsBasket('.products__elem-basket', '.header__basket-body-val', '.header__basket-body-cont');
@@ -153,9 +237,14 @@ document.addEventListener('DOMContentLoaded', () => {
 						if (el.getAttribute('data-card-inp') == e.target.getAttribute('data-less')) {
 							if (el.value > 1) {
 								+el.value--;
+								if (document.querySelector('.g-product-quantity__val')) {
+									document.querySelector('.g-product-quantity__val').innerHTML = el.value;
+								}
 								if (fullValue.length >= 1 && fullValue[i] !== undefined) {
 									rez2 = fullValue[i].getAttribute('data-vvl').replace(/\s/g, '');
 									fullValue[i].innerHTML = prettify((+fullValue[i].innerHTML.replace(/\s/g, '') - +rez2 + ' '));
+									sumBasket('.g-product-quantity__val', '.g-card1__price-new', '.basket__form-elems > .basket__elem > .rub', '.basket__sum > .rub');
+									discountBasket('.g-card1__price-old', '.g-card1__price-new', '.basket__elem-discount > strong');
 								}
 
 							}
@@ -170,6 +259,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 						if (el.getAttribute('data-card-inp') == e.target.getAttribute('data-more')) {
 							+el.value++;
+
+							if (document.querySelector('.g-product-quantity__val')) {
+								document.querySelector('.g-product-quantity__val').innerHTML = el.value;
+							}
+
 							if (fullValue.length >= 1 && fullValue[i] !== undefined) {
 								// console.log(fullValue[i])
 								rez2 = fullValue[i].getAttribute('data-vvl').replace(/\s/g, '');
@@ -178,6 +272,8 @@ document.addEventListener('DOMContentLoaded', () => {
 								// console.log(v)
 								// console.log(v2)
 								fullValue[i].innerHTML = prettify((+fullValue[i].innerHTML.replace(/\s/g, '') + +rez2 + ' '));
+								sumBasket('.g-product-quantity__val', '.g-card1__price-new', '.basket__form-elems > .basket__elem > .rub', '.basket__sum > .rub');
+								discountBasket('.g-card1__price-old', '.g-card1__price-new', '.basket__elem-discount > strong');
 							}
 
 						}
@@ -193,6 +289,13 @@ document.addEventListener('DOMContentLoaded', () => {
 						if (fullValue.length >= 1 && fullValue[i] !== undefined) {
 							rez2 = fullValue[i].getAttribute('data-vvl').replace(/\s/g, '');
 							fullValue[i].innerHTML = prettify(+rez2 * +e.target.value + ' ');
+
+							if (document.querySelector('.g-product-quantity__val')) {
+								document.querySelector('.g-product-quantity__val').innerHTML = el.value;
+							}
+
+							sumBasket('.g-product-quantity__val', '.g-card1__price-new', '.basket__form-elems > .basket__elem > .rub', '.basket__sum > .rub');
+							discountBasket('.g-card1__price-old', '.g-card1__price-new', '.basket__elem-discount > strong');
 						}
 					}
 				})
@@ -212,13 +315,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Конец Наращивания кол-ва товаров при клике и подсчета
 
-	// Функция вставки проблема между цифрами
+	// Функция вставки пробела между цифрами
 
 	function prettify(num) {
 		var n = num.toString();
 		return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ' ');
 	}
-
 	// end 
 
 	// клик на поиск

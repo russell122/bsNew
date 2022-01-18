@@ -429,7 +429,7 @@ header.header.scroll-bar
 								p
 									strong.header__basket-body-val 5 
 									span.header__basket-body-cont товаров 
-								p.rub 123 560 
+								p.rub 123560 
 							.header__basket-icon 
 								+icon('basket')
 								span 10
@@ -444,8 +444,9 @@ header.header.scroll-bar
 											.products__body-close
 												+icon('close')
 										.products__body-price.products__body-price-w
-											span.products__body-priceSm 1 шт.
-											span.rub.products__body-newPrice 12 345 
+											span.products__body-priceSm.products__body-priceSm-value 1 
+											span.products__body-priceSm.products__body-priceSm-text шт.
+											span.rub.products__body-newPrice.products__body-price-js 12 345 
 											span.rub.products__body-oldPrice от 12 345 
 								.products__elem.products__elem-basket 
 									.products__img
@@ -456,8 +457,9 @@ header.header.scroll-bar
 											.products__body-close
 												+icon('close')
 										.products__body-price.products__body-price-w
-											span.products__body-priceSm 3 шт.
-											span.rub.products__body-price 12 345
+											span.products__body-priceSm.products__body-priceSm-value 3 
+											span.products__body-priceSm.products__body-priceSm-text шт.
+											span.rub.products__body-price.products__body-price-js 12 000 
 							.products__inform
 								a(href="#").g-link.clearBasketSM Очистить корзину
 								a(href="basket.html").g-link.g-link-accent Перейти в корзину

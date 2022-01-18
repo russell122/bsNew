@@ -44,7 +44,7 @@ mixin card(i,news, discount, recomm, src, altImg, article, text, price, oldPrice
 				.purchase-button(data-btn-modal="creatingClient")
 					+icon('cart') 
 
-mixin card2(i,news, discount, recomm, src, altImg, elemName, article, display, sizeDisp, plotnDisp, price, oldPrice, cans)
+mixin card2(i,news, discount, recomm, src, altImg, elemName, article, display, sizeDisp, plotnDisp, price, oldPrice, cans, val, disc)
 	.g-card2__column
 		.g-card2
 			.g-card2__img
@@ -72,18 +72,22 @@ mixin card2(i,news, discount, recomm, src, altImg, elemName, article, display, s
 				if(oldPrice !== '')
 					.g-card1__price-new-wrap 
 						p.ac от 
-						p.g-card1__price-new.rub(data-vvl="12 345") #{price}  
-					p.g-card1__price-old.rub от #{oldPrice} 
+						p.g-card1__price-new.rub(data-vvl=`${price}`) #{price}  
+					p.g-card1__price-old.rub(data-vvl=`${oldPrice}`) от #{oldPrice} 
 				else 
 					.g-card1__price-new-wrap
 						p от 
-						p.g-card1__price-new.rub.black(data-vvl="12 345") #{price} 
+						p.g-card1__price-new.rub.black(data-vvl=`${price}`) #{price} 
 			.g-card1__set
 				.g-card1__set-top
 					.g-product-quantity.g-card1__g-product-quantity
 						span(title="Меньше" data-less=`${i}`).less
 						//- a(href="#" )
-						input(type="text" value="1" data-card-inp=`${i}` data-card-inp-val=`${i - 1}`).g-product-quantity__inp.g-product-quantity__inp-s
+						if(disc)
+							input(type="text" value="1" data-card-inp=`${i}` data-card-inp-val=`${i - 1}`).g-product-quantity__inp.g-product-quantity__inp-s.disc
+						else
+							input(type="text" value="1" data-card-inp=`${i}` data-card-inp-val=`${i - 1}`).g-product-quantity__inp.g-product-quantity__inp-s
+						span.g-product-quantity__val #{val}
 						span(title="Больше" data-more=`${i}`).more 
 						//- a(href="#" )
 					.purchase-button(data-btn-modal="creatingClient") 

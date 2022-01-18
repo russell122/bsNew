@@ -16,7 +16,7 @@ function initMobileMenu() {
         flexFlow: 'column nowrap',
         width: 'calc(100vw - 24px)',
         maxWidth: '400px',
-        transform: 'translateX(12px)',
+        transform: 'translate(12px, 12px)',
         padding: '32px',
         borderRadius: '15px',
         background: 'white',

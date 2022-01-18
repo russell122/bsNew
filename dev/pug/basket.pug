@@ -21,9 +21,10 @@ block content
 				.basket__left
 					.g-card1__wrap-sea
 						.g-card1__wrap-sea-cont
-							+card2(1,false,false,false,'card2-1.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','14 000', true)
-							+card2(2,false,false,false,'card2-2.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','', true)
-							+card2(3,true,true,false,'card2-3.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','', true)
+							+card2(1,false,false,false,'card2-1.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','14 000', true, 1, true)
+							+card2(2,false,false,false,'card2-2.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','', true, 1, false)
+							+card2(3,true,true,false,'card2-3.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 345','', true, 1, false)
+							+card2(4,false,false,false,'card2-1.png','img','Смарт-терминал Эвотор 5i с эквайрингом','CK 1378/N','5,5 дюйма, Цветной, сенсорный','1280 х 720','267','12 000','16 000', true, 1, true)
 						a(href="#").button.clearBasket
 							+icon('x')
 							span Очистить корзину
@@ -34,7 +35,7 @@ block content
 								span (8)
 								p.basket__elem-names Товары - 
 								strong.rub 34 567 
-							.basket__elem 
+							.basket__elem.basket__elem-discount
 								p Скидка по акции 
 								strong.rub - 12 345 
 						.basket__sum 

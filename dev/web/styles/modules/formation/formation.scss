@@ -92,6 +92,9 @@
 		}
 		.sort__el{
 			flex: 0 1 57%;
+			label{
+				width: 100%;
+			}
 			@media screen and(max-width: $mobile) {
 				flex: 0 1 100%;
 				margin-bottom: 10px;
