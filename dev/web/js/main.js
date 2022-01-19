@@ -915,6 +915,10 @@ if (nameSBubs) {
 }
 
 
+function mod() {
+	console.log('А НУ ПОШЛИ НАХУЙ ОТСЮДОВА');
+}
+
 
 $(document).ready(function () {
 
@@ -922,6 +926,7 @@ $(document).ready(function () {
 
 	function questionsFormValidation() {
 
+		let questionsForm = document.querySelector('.questions__form');
 		let questionsFormName = document.querySelector('.questions__form-name');
 		let questionsFormMob = document.querySelector('.questions__form-mob');
 		let questionsCheck = document.querySelector('.questions__check input');
@@ -936,7 +941,7 @@ $(document).ready(function () {
 		$('.questions__form').submit(function (e) {
 			e.preventDefault();
 
-			console.log(questionsFormMob.value.length);
+			// console.log(questionsFormMob.value.length);
 
 			if (!questionsCheck.checked) {
 				questionsFormMessage.classList.add('active');
@@ -967,6 +972,13 @@ $(document).ready(function () {
 					data: data,
 					success: function (result) {
 						// console.log(data)
+						mod();
+						document.querySelector('.questions__right').classList.add('active');
+						document.querySelector('.questions__form-ok').classList.add('active');
+						setTimeout(() => {
+							document.querySelector('.questions__right').classList.remove('active');
+							document.querySelector('.questions__form-ok').classList.remove('active');
+						}, 3000)
 					}
 				});
 			}
