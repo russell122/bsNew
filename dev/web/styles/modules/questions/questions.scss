@@ -137,6 +137,19 @@
 				}
 			}
 		}
-
+	}
+	&__form-message{
+		opacity: 0;
+		visibility: hidden;
+		background: $accent;
+		transition: all ease .2s;
+		color: $white;
+		border-radius: 5px;
+		padding: 10px;
+	}
+	&__form-message.active{
+		opacity: 1;
+		visibility: visible;
+		transition: all ease .2s;
 	}
 }

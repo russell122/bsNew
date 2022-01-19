@@ -43,18 +43,20 @@ section.questions.scroll-bar
 							h5 Безусловно, новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании поставленных обществом задач. 
 					.questions__sub(data-ulvalue="112")
 						p Безусловно, новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании поставленных обществом задач. 
-			form.questions__right 
+			form.questions__right.questions__form
 				h2.title-3 Нужна консультация?
 				p Подберем оборудование для маркировки на любой бюджет! Доставка по все РФ
 				label.g-label
-					input(type="text" placeholder="Ваше имя" name="name" required)
+					input.questions__form-name(type="text" placeholder="Ваше имя" name="name" required)
 					+icon('men')
 				label.g-label
-					input(type="tel" placeholder="Номер телефона" name="phone" required)
+					input.questions__form-mob(type="tel" placeholder="Номер телефона" name="phone" required)
 					+icon('phone')
 				.questions__check.myInp
 					input(type="checkbox" id="check1")
 					label(for="check1") Отправляя форму вы принимаете условия обработки 
 						a(href="#").g-link.g-link-tdu персональных данных
+				.questions__form-message
 				.questions__btn 
-					button.button.button-blank Перезвоните мне
+					button(type="submit").button.button-blank Перезвоните мне
+				

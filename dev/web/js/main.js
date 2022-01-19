@@ -791,11 +791,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		return new bootstrap.Tooltip(tooltipTriggerEl)
 	})
 
-
 });
-
-
-
 
 // скрыть куки
 
@@ -832,9 +828,6 @@ if (slid !== null) {
 		slid.classList.remove('slideNone')
 	}
 }
-
-
-
 
 // Заглушка в слайдере если нет картинки
 
@@ -924,6 +917,66 @@ if (nameSBubs) {
 
 
 $(document).ready(function () {
+
+	// Валидация формы обратной связи
+
+	function questionsFormValidation() {
+
+		let questionsFormName = document.querySelector('.questions__form-name');
+		let questionsFormMob = document.querySelector('.questions__form-mob');
+		let questionsCheck = document.querySelector('.questions__check input');
+		let questionsFormMessage = document.querySelector('.questions__form-message');
+		let flag = true;
+
+		function checkValidName(value) {
+			return /^\s*(\w+)\s*$/.test(value);
+		}
+
+		// Отправка формы "перезвони мне"
+		$('.questions__form').submit(function (e) {
+			e.preventDefault();
+
+			console.log(questionsFormMob.value.length);
+
+			if (!questionsCheck.checked) {
+				questionsFormMessage.classList.add('active');
+				questionsFormMessage.innerHTML = 'Вам необходимо согласиться с условиями обработки персональных данных.';
+				flag = false;
+			}
+			else if (!checkValidName(questionsFormName.value)) {
+				questionsFormMessage.classList.add('active');
+				questionsFormMessage.innerHTML = 'Допускается только латиница и цифры.';
+				flag = false;
+			}
+			else if (questionsFormMob.value.length < 16) {
+				questionsFormMessage.classList.add('active');
+				questionsFormMessage.innerHTML = 'Введите все цифры вашего мобильного телефона';
+				flag = false;
+			}
+			else {
+				questionsFormMessage.classList.remove('active');
+				questionsFormMessage.innerHTML = '';
+				flag = true;
+			}
+
+			if (flag == true) {
+				var data = $(this).serialize();
+				$.ajax({
+					type: 'POST',
+					url: "test.php",
+					data: data,
+					success: function (result) {
+						// console.log(data)
+					}
+				});
+			}
+
+
+		});
+	};
+
+	questionsFormValidation();
+
 
 	let slider;
 	const activeSlider = (type) => {

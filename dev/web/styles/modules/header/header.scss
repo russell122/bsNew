@@ -504,7 +504,7 @@
 		width: 81%;
 		@media screen and(max-width: $desktop) {
 			width: 500px;
-			left: -500px;
+			left: -545px;
 			z-index: 51;
 		  }
 	}
@@ -534,6 +534,7 @@
 	.header__search-inp-el.active{
 		position: absolute;
 		background-color: transparent;
+		right: 10px;
 	}
 	&__search-block{
 		display: none;
