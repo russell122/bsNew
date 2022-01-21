@@ -914,12 +914,6 @@ if (nameSBubs) {
 	})
 }
 
-
-function mod() {
-	console.log('А НУ ПОШЛИ НАХУЙ ОТСЮДОВА');
-}
-
-
 $(document).ready(function () {
 
 	// Валидация формы обратной связи
@@ -972,7 +966,6 @@ $(document).ready(function () {
 					data: data,
 					success: function (result) {
 						// console.log(data)
-						mod();
 						document.querySelector('.questions__right').classList.add('active');
 						document.querySelector('.questions__form-ok').classList.add('active');
 						setTimeout(() => {
